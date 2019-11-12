@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>分布式</title>
+      <link href="/2019/11/12/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%974/"/>
+      <url>/2019/11/12/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%974/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基于消息中间件的通信技术"><a href="#基于消息中间件的通信技术" class="headerlink" title="基于消息中间件的通信技术"></a>基于消息中间件的通信技术</h2><p>OMO     点对点</p><p>面向消息中间件：提供了一种分布式消息队列服务，使得节点之间可以实现基于消息的形式灵活的异步通信。</p><a id="more"></a><p>异步的含义</p><p>​    发送方可以在任意时刻发出消息不必等待接收方上线，不必等待发送成功</p><p>​    接收方不必以阻塞方式等待消息的到来</p><p>三种接收方式</p><p>​    阻塞方式</p><p>​    轮询模式　　ｔｉｍｅｏｕｔ＝＝０</p><p>​    回调接收　　异步　主动通知</p><p>　URL - factory - connection - session queue consumer</p><p>   jms 访问各类消息队列中间件的api</p><p>  面向接口编程：  先把接口商量好，定义一组interface，各自实现类，类实现接口。</p><p>MOM触发你的onMessage的调用 不是consumer调用  onMessage处理消息。</p><p>37行 pause， </p><p>运行：先启动消息中间件  activemq  队列也可以有多个消费者，但是，只有一个获取消息 拿了就没了</p><h2 id="基于主题发布-订阅通信编程实例"><a href="#基于主题发布-订阅通信编程实例" class="headerlink" title="基于主题发布/订阅通信编程实例"></a>基于主题发布/订阅通信编程实例</h2><p>Publisher —-&gt;Topic—-&gt;subscriber</p><p>URL—&gt;FACTORY—&gt;CONNECTION–&gt;SESSION–&gt;TOPIC</p><p>异步通信，可以减少系统响应时间，提高吞吐量</p><p>分布式节点之间的解耦</p><p>保证消息的可靠递交，中间件保证消息尽量可以交给接受者。  实现最终一致性</p><p>实现广播，组播和多对多通信</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试</title>
+      <link href="/2019/11/12/%E6%B5%8B%E8%AF%95/"/>
+      <url>/2019/11/12/%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="title-测试"><a href="#title-测试" class="headerlink" title="title:测试"></a>title:测试</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">cout</span>&lt;&lt;<span class="string">"hello world"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/11/12/hello-world/"/>
+      <url>/2019/11/12/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
