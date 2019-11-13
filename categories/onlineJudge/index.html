@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 149 words)
+                    a minute read (About 150 words)
                 </span>
                 
                 
@@ -151,25 +151,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/13/Uva1585/">Uva1585</a>
+                <a class="has-link-black-ter" href="/2019/11/13/Uva1585/">Score,ACM/ICPC Seoul 2005,Uva1585</a>
             
         </h1>
         <div class="content">
             <p>There is an objective test result such as “OOXXOXXOOO”. An ‘O’ means a correct answer of a problem and an ‘X’ means a wrong answer. The score of each problem of this test is calculated by itself and its just previous consecutive ‘O’’’s only when the answer is correct. For example, the score of the 10th problem is 3 that is obtained by itself and its two previous consecutive ‘O’s.</p>
-<p><strong>Input</strong></p>
-<p>consists of T test cases.</p>
-<p><strong>Output</strong></p>
-<p>T lines of score.</p>
-<p><strong>Sample Input</strong></p>
-<p>5<br>OOXXOXXOOO<br>OOXXOOXXOO<br>OXOXOXOXOXOXOX<br>OOOOOOOOOO<br>OOOOXOOOOXOOOOX</p>
-<p><strong>Sample Output</strong></p>
-<p>10<br>9<br>7<br>55<br>30</p>
-<hr>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> answer;</span><br><span class="line">    <span class="hljs-keyword">int</span> score;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;answer;</span><br><span class="line">        score = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; answer.<span class="hljs-built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(answer[i]==<span class="hljs-string">'O'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ++consecutive_num;</span><br><span class="line">                score+=consecutive_num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>(T!=<span class="hljs-number">0</span>)</span><br><span class="line">            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;score&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;score;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/13/Uva1585/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -353,7 +349,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Uva1585</a>
+                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Score,ACM/ICPC Seoul 2005,Uva1585</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
                     </p>
@@ -483,7 +479,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Uva1585</a>
+                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Score,ACM/ICPC Seoul 2005,Uva1585</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
                     </p>
