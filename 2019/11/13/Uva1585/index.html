@@ -19,7 +19,7 @@
 <meta property="og:description" content="There is an objective test result such as “OOXXOXXOOO”. An ‘O’ means a correct answer of a problem and an ‘X’ means a wrong answer. The score of each problem of this test is calculated by itself and i">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-13T12:15:09.292Z">
+<meta property="og:updated_time" content="2019-11-13T12:28:59.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -134,7 +134,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 150 words)
+                    a minute read (About 144 words)
                 </span>
                 
                 
@@ -159,7 +159,7 @@
 <p><strong>Sample Output</strong></p>
 <p>10<br>9<br>7<br>55<br>30</p>
 <hr>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> answer;</span><br><span class="line">    <span class="hljs-keyword">int</span> score;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;answer;</span><br><span class="line">        score = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; answer.<span class="hljs-built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(answer[i]==<span class="hljs-string">'O'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ++consecutive_num;</span><br><span class="line">                score+=consecutive_num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>(T!=<span class="hljs-number">0</span>)</span><br><span class="line">            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;score&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;score;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> answer;</span><br><span class="line">    <span class="hljs-keyword">int</span> score;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;answer;</span><br><span class="line">        score = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; answer.<span class="hljs-built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(answer[i]==<span class="hljs-string">'O'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ++consecutive_num;</span><br><span class="line">                score+=consecutive_num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> consecutive_num=<span class="hljs-number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;score&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -184,6 +184,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/13/MolarMass/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">MolarMass</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -241,7 +248,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -329,7 +336,7 @@
                 <span class="level-item">onlineJudge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">
@@ -350,7 +357,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E6%B1%89%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">汉语言</a>
+        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10px;">字符串</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E6%B1%89%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">汉语言</a>
     </div>
 </div>
     
@@ -362,6 +369,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T12:29:03.354Z">2019-11-13</time></div>
+                    <a href="/2019/11/13/MolarMass/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MolarMass</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -432,7 +452,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -453,14 +473,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -497,6 +517,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T12:29:03.354Z">2019-11-13</time></div>
+                    <a href="/2019/11/13/MolarMass/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MolarMass</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time></div>
                     <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Score,ACM/ICPC Seoul 2005,Uva1585</a>
                     <p class="is-size-7 is-uppercase">
@@ -562,7 +595,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -583,14 +616,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
