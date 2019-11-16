@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Periodic Strings,UVa455</title>
+      <link href="/2019/11/15/Uva455/"/>
+      <url>/2019/11/15/Uva455/</url>
+      
+        <content type="html"><![CDATA[<p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p><p>&emsp;Write a program to read a character and determine its smallest period.</p><p><strong>Input</strong></p><p>An first line of the input file will contain a single integer N indicting how many test case that your program will test followed by blank line. Each test case will contain a single character string of up to 80 non-blank characters. Two consecutive input will separated by a blank line.</p><p><strong>Output</strong></p><p>An integer denoting the smallest period of the input string for each input. Two consecutive output are separated by a blank line. </p><p><strong>Sample Input</strong></p><p>1<br>HoHoHo</p><p><strong>Sample Output</strong></p><p>2</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;<span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">1</span>; i&lt;=<span class="hljs-built_in">line</span>.length();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>.length()%i!=<span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> temp =<span class="hljs-built_in">line</span>.substr(<span class="hljs-number">0</span>,i);</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-string">""</span>)</span></span>;</span><br><span class="line">                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-built_in">line</span>.length()/i;j++)</span><br><span class="line">                    cmp+=temp;</span><br><span class="line">                <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>==cmp)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp; string.size(),string.length()没有实质区别，length()是从c语言中习惯传承的，string最开始只有length，后来STL引入，作为STL容器属性存在，便于符合STL接口规则。</p><p><strong>环形串解法</strong></p><p>&emsp;看成一个圆，圆转动多少位能复原即可得出解。</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abcabcabc<span class="hljs-comment">//原</span></span><br><span class="line">cabcabcab<span class="hljs-comment">//右移一位</span></span><br><span class="line">bcabcabca<span class="hljs-comment">//2位</span></span><br><span class="line">abcabcabc<span class="hljs-comment">//3位置 解为3</span></span><br><span class="line">s[i]==s[(i+n)%<span class="hljs-built_in">size</span>];</span><br></pre></td></tr></table></figure><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;<span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(;i&lt;=<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">bool</span> flag = <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>();j++)</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>[j]!=<span class="hljs-built_in">line</span>[(j+i)%<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>()]) flag=<span class="hljs-literal">true</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span>(flag==<span class="hljs-literal">false</span>)&#123;</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Digit Counting, UVa1225</title>
       <link href="/2019/11/14/DigitCounting/"/>
       <url>/2019/11/14/DigitCounting/</url>
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> 数组 </tag>
-            
             <tag> 字符串 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
@@ -72,9 +99,9 @@
       
         <tags>
             
-            <tag> 数组 </tag>
-            
             <tag> 字符串 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
@@ -99,9 +126,9 @@
       
         <tags>
             
-            <tag> 数组 </tag>
-            
             <tag> 字符串 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
