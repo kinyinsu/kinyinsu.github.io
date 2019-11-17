@@ -7,15 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tag: 字符串 - ssssssss</title>
+<title>puzzle,UVa227，world Finals 1993 - ssssssss</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ssssssss">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E5%AD%97%E7%AC%A6%E4%B8%B2&#x2F;index.html">
+    <meta name="description" content="&amp;emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:">
+<meta name="keywords" content="数组,字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="puzzle,UVa227，world Finals 1993">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;Puzzle&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
+<meta property="og:description" content="&amp;emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-11-17T03:52:41.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -75,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ssssssss" height="28">
+                <img src="/images/logo.svg" alt="puzzle,UVa227，world Finals 1993" height="28">
             
             </a>
         </div>
@@ -113,18 +117,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">字符串</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
@@ -150,21 +143,46 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/16/Puzzle/">puzzle,UVa227，world Finals 1993</a>
+                puzzle,UVa227，world Finals 1993
             
         </h1>
         <div class="content">
             <p>&emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:</p>
+<a id="more"></a>
+
+<p>1) The square above the empty position moves.</p>
+<p>2) The square to the right of the empty position moves.</p>
+<p>3) The square to the right of the empty position moves.</p>
+<p>4) The square below the empty position moves.</p>
+<p>5) The square below the empty position moves.</p>
+<p>6) The square to the left of the empty position moves.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-----------      -----------</span><br><span class="line">|T|R|G|S|J|		 |T|R|G|S|J|				</span><br><span class="line">|X|D|O|K|I|      |X|O|K|L|I|</span><br><span class="line">|M| |V|L|N|      |M|D|V|B|N|</span><br><span class="line">|W|P|A|B|E|      |W|P| |A|E|</span><br><span class="line">|U|Q|H|C|F|      |U|Q|H|C|F|</span><br><span class="line">-----------      -----------</span><br></pre></td></tr></table></figure>
+
+<p><strong>Input</strong></p>
+<p> Input for your program consists of several puzzles. Each is described by its initial configuration and the sequence of moves on the puzzle.  The first 5 lines of each puzzle description are the starting configuration. Subsequent lines give the sequence of moves.</p>
+<p><strong>Output</strong></p>
+<p>Output for each puzzle begins with an appropriately labeled number(Puzzle #1,Puzzle #2, etc.). If the puzzle has no final configuration, then a message to the effect should follow. Otherwise that final configuration should be displayed.</p>
+<p><strong>Sample Input</strong></p>
+<p>TRGSJ<br>XDOKI<br>M VLN<br>WPABE<br>UQHCF<br>ARRBBL0<br>ABCDE<br>FGHIJ<br>KLMNO<br>PQRS<br>TUVWX<br>AAA<br>LLLL0<br>ABCDE<br>FGHIJ<br>KLMNO<br>PQRS<br>TUVWX<br>AAAAABBRRRLL0<br>Z<br><strong>Sample Output</strong><br>Puzzle #1:<br>T R G S J<br>X O K L I<br>M D V B N<br>W P A E<br>U Q H C F<br>Puzzle #2:<br>A B C D<br>F G H I E<br>K L M N J<br>P Q R S O<br>T U V W X<br>Puzzle #3:<br>This puzzle has no final configuration.</p>
+<p><strong>注意输入输出格式</strong></p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">char</span> present;</span><br><span class="line"><span class="hljs-keyword">char</span> puzzle[<span class="hljs-number">5</span>][<span class="hljs-number">5</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> dx,dy;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sswap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> temp = puzzle[dx][dy];</span><br><span class="line">    puzzle[dx][dy]=puzzle[dx+m][dy+n];</span><br><span class="line">    puzzle[dx+m][dy+n]=temp;</span><br><span class="line">    dx = dx+m;dy = dy+n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> num=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ++num;</span><br><span class="line">        <span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;present)&amp;&amp;present==<span class="hljs-string">'\n'</span>);</span><br><span class="line">        <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'Z'</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(num!=<span class="hljs-number">1</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)</span><br><span class="line">                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">5</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                 <span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>&amp;&amp;j==<span class="hljs-number">0</span>)&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span>(present==<span class="hljs-string">' '</span>)&#123;dx=i;dy=j;&#125;</span><br><span class="line">                    puzzle[i][j]=present;</span><br><span class="line"></span><br><span class="line">                 &#125;</span><br><span class="line">                 <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;present)&amp;&amp;present==<span class="hljs-string">'\n'</span>);</span><br><span class="line">                    <span class="hljs-keyword">if</span>(present==<span class="hljs-string">' '</span>)&#123;dx=i;dy=j;&#125;</span><br><span class="line">                    puzzle[i][j]=present;</span><br><span class="line">                 &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="hljs-comment">//get the puzzle;</span></span><br><span class="line">        <span class="hljs-keyword">bool</span> isAns=<span class="hljs-literal">true</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">while</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;present)&amp;&amp;(present==<span class="hljs-string">'\n'</span>||present==<span class="hljs-string">' '</span>));</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'A'</span>&amp;&amp;isAns)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="hljs-keyword">if</span>(dx!=<span class="hljs-number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    sswap(<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                    isAns=<span class="hljs-literal">false</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Puzzle #"</span>&lt;&lt;num&lt;&lt;<span class="hljs-string">":"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"This puzzle has no final configuration.\n"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'B'</span>&amp;&amp;isAns)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="hljs-keyword">if</span>(dx!=<span class="hljs-number">4</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    sswap(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="hljs-keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">                    isAns=<span class="hljs-literal">false</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Puzzle #"</span>&lt;&lt;num&lt;&lt;<span class="hljs-string">":"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"This puzzle has no final configuration.\n"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'R'</span>&amp;&amp;isAns)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="hljs-keyword">if</span>(dy!=<span class="hljs-number">4</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    sswap(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="hljs-keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">                    isAns=<span class="hljs-literal">false</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Puzzle #"</span>&lt;&lt;num&lt;&lt;<span class="hljs-string">":"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"This puzzle has no final configuration.\n"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'L'</span>&amp;&amp;isAns)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="hljs-keyword">if</span>(dy!=<span class="hljs-number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    sswap(<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="hljs-keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">                    isAns=<span class="hljs-literal">false</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Puzzle #"</span>&lt;&lt;num&lt;&lt;<span class="hljs-string">":"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"This puzzle has no final configuration.\n"</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(present==<span class="hljs-string">'0'</span>) <span class="hljs-keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>(isAns)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Puzzle #"</span>&lt;&lt;num&lt;&lt;<span class="hljs-string">":"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">5</span>;i++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">4</span>;j++)</span><br><span class="line">                        <span class="hljs-built_in">cout</span>&lt;&lt;puzzle[i][j]&lt;&lt;<span class="hljs-string">' '</span>;</span><br><span class="line">                         <span class="hljs-built_in">cout</span>&lt;&lt;puzzle[i][<span class="hljs-number">4</span>]&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>while(scanf()&amp;&amp;())</strong>吃掉多余空格和回车。</p>
+<p>输入不用担心puzzle部分有多余空格</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/16/Puzzle/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>, <a class="has-link-grey -link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -174,220 +192,19 @@
 
 
 
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 238 words)
-                </span>
-                
-                
-            </div>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/15/Uva455/">
+                <span class="level-item">Periodic Strings,UVa455</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/15/Uva455/">Periodic Strings,UVa455</a>
-            
-        </h1>
-        <div class="content">
-            <p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p>
-<p>&emsp;Write a program to read a character and determine its smallest period.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/15/Uva455/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
         
     </div>
 </div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T11:29:08.232Z">2019-11-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 101 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/14/DigitCounting/">Digit Counting, UVa1225</a>
-            
-        </h1>
-        <div class="content">
-            <p>Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&lt;N&lt;10000). After that,he counts the number of times each digit appears in the sequence.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/14/DigitCounting/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T12:29:03.354Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 208 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/MolarMass/">MolarMass</a>
-            
-        </h1>
-        <div class="content">
-            <p>An organic compound /ˈkɒmpaʊnd/  is any member of a large class of chemical compounds whose molecules contain carbon. The molar mass of an organic compound is the mass of one mole of the organic compound. The molar mass of an organic compound can be computed from the standard atomic weights of the elements.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/MolarMass/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 144 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/Uva1585/">Score,ACM/ICPC Seoul 2005,Uva1585</a>
-            
-        </h1>
-        <div class="content">
-            <p>There is an objective test result such as “OOXXOXXOOO”. An ‘O’ means a correct answer of a problem and an ‘X’ means a wrong answer. The score of each problem of this test is calculated by itself and its just previous consecutive ‘O’’’s only when the answer is correct. For example, the score of the 10th problem is 3 that is obtained by itself and its two previous consecutive ‘O’s.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/Uva1585/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
 
 
 </div>
@@ -837,7 +654,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ssssssss" height="28">
+                    <img src="/images/logo.svg" alt="puzzle,UVa227，world Finals 1993" height="28">
                 
                 </a>
                 <p class="is-size-7">

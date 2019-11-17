@@ -131,6 +131,59 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 555 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/16/Puzzle/">puzzle,UVa227，world Finals 1993</a>
+            
+        </h1>
+        <div class="content">
+            <p>&emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/16/Puzzle/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time>
                 
                 <div class="level-item">
@@ -141,7 +194,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 237 words)
+                    2 minutes read (About 238 words)
                 </span>
                 
                 
@@ -156,30 +209,16 @@
         <div class="content">
             <p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p>
 <p>&emsp;Write a program to read a character and determine its smallest period.</p>
-<p><strong>Input</strong></p>
-<p>An first line of the input file will contain a single integer N indicting how many test case that your program will test followed by blank line. Each test case will contain a single character string of up to 80 non-blank characters. Two consecutive input will separated by a blank line.</p>
-<p><strong>Output</strong></p>
-<p>An integer denoting the smallest period of the input string for each input. Two consecutive output are separated by a blank line. </p>
-<p><strong>Sample Input</strong></p>
-<p>1<br>HoHoHo</p>
-<p><strong>Sample Output</strong></p>
-<p>2</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;<span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">1</span>; i&lt;=<span class="hljs-built_in">line</span>.length();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>.length()%i!=<span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> temp =<span class="hljs-built_in">line</span>.substr(<span class="hljs-number">0</span>,i);</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-string">""</span>)</span></span>;</span><br><span class="line">                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-built_in">line</span>.length()/i;j++)</span><br><span class="line">                    cmp+=temp;</span><br><span class="line">                <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>==cmp)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">                    <span class="hljs-keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>&emsp; string.size(),string.length()没有实质区别，length()是从c语言中习惯传承的，string最开始只有length，后来STL引入，作为STL容器属性存在，便于符合STL接口规则。</p>
-<p><strong>环形串解法</strong></p>
-<p>&emsp;看成一个圆，圆转动多少位能复原即可得出解。</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abcabcabc<span class="hljs-comment">//原</span></span><br><span class="line">cabcabcab<span class="hljs-comment">//右移一位</span></span><br><span class="line">bcabcabca<span class="hljs-comment">//2位</span></span><br><span class="line">abcabcabc<span class="hljs-comment">//3位置 解为3</span></span><br><span class="line">s[i]==s[(i+n)%<span class="hljs-built_in">size</span>];</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> <span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;<span class="hljs-built_in">line</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(;i&lt;=<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">bool</span> flag = <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>();j++)</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">line</span>[j]!=<span class="hljs-built_in">line</span>[(j+i)%<span class="hljs-built_in">line</span>.<span class="hljs-built_in">size</span>()]) flag=<span class="hljs-literal">true</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span>(flag==<span class="hljs-literal">false</span>)&#123;</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/15/Uva455/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -395,7 +434,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        9
                     </p>
                 </div>
             </div>
@@ -483,7 +522,7 @@
                 <span class="level-item">onlineJudge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">
@@ -521,6 +560,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time></div>
+                    <a href="/2019/11/16/Puzzle/" class="title has-link-black-ter is-size-6 has-text-weight-normal">puzzle,UVa227，world Finals 1993</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time></div>
                     <a href="/2019/11/15/Uva455/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Periodic Strings,UVa455</a>
                     <p class="is-size-7 is-uppercase">
@@ -569,19 +621,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Score,ACM/ICPC Seoul 2005,Uva1585</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -599,7 +638,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -620,14 +659,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -664,6 +703,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time></div>
+                    <a href="/2019/11/16/Puzzle/" class="title has-link-black-ter is-size-6 has-text-weight-normal">puzzle,UVa227，world Finals 1993</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time></div>
                     <a href="/2019/11/15/Uva455/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Periodic Strings,UVa455</a>
                     <p class="is-size-7 is-uppercase">
@@ -712,19 +764,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time></div>
-                    <a href="/2019/11/13/Uva1585/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Score,ACM/ICPC Seoul 2005,Uva1585</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -742,7 +781,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -763,14 +802,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
