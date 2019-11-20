@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Category: onlineJudge - ssssssss</title>
+<title>Tag: c++ - ssssssss</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="ssssssss">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;onlineJudge&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;c&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
@@ -117,9 +117,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">onlineJudge</a></li>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">c++</a></li>
         </ul>
         </nav>
     </div>
@@ -132,17 +131,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-17T08:47:56.546Z">2019-11-17</time>
+                <time class="level-item has-text-grey" datetime="2019-11-20T09:40:34.530Z">2019-11-20</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 435 words)
+                    5 minutes read (About 683 words)
                 </span>
                 
                 
@@ -151,288 +150,39 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/17/crossword%20Answers/">Crossword Answer</a>
+                <a class="has-link-black-ter" href="/2019/11/20/c++%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/">11.2初窥算法</a>
             
         </h1>
         <div class="content">
-            <p>&emsp; A crossword puzzle consists of a rectangular grid of black and white squares and two lists of definitions.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">______________________</span><br><span class="line">|1 |2 |3 |■ |4 |5 |6 |</span><br><span class="line">|■ |7 |  |■ |8 |  |  |</span><br><span class="line">|9 |  |  |10|■ |11|  |</span><br><span class="line">|12|  |■ |13|14|  |  |</span><br><span class="line">|■ |15|16|■ |17|  |■ |</span><br><span class="line">|18|  |  |■ |19|  |20|</span><br><span class="line">——————————————————————</span><br></pre></td></tr></table></figure>
+            <p><strong>算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。</strong></p>
+<p>·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。</p>
+<p>·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。</p>
+<h4 id="1-只读算法"><a href="#1-只读算法" class="headerlink" title="1.只读算法"></a>1.只读算法</h4><p>&emsp;只读取输入范围内的元素。ex: accumulate</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> sum = accumulate(vec.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">end</span>(),<span class="hljs-number">42</span>);</span><br></pre></td></tr></table></figure>
+
+<p>指定第三个实参是必要的。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.累加需要一个起始值。</span><br><span class="line">2.容器内的元素类型必须与第三个实参的类型匹配或者可以转换。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> sum = accumulate(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>(),<span class="hljs-built_in">string</span>(<span class="hljs-string">""</span>));</span><br><span class="line"><span class="hljs-comment">//实现了累加但是第三个参数不是字符串常量""，因为string的加法操作数一个是string一个是const char*</span></span><br></pre></td></tr></table></figure>
+
+<p>ex2: first_find_of//标记两段元素范围，在第一段范围内查找与第二段范围任意元素匹配的元素，返回迭代器。</p>
+<h4 id="2-写容器元素的算法"><a href="#2-写容器元素的算法" class="headerlink" title="2.写容器元素的算法"></a>2.写容器元素的算法</h4><p>&emsp;一些算法写入元素值，在使用这些算法写元素时当心，必须确保算法所写的序列至少足以存储要写入的元素。</p>
+<h6 id="写入输入序列的元素"><a href="#写入输入序列的元素" class="headerlink" title="写入输入序列的元素"></a>写入输入序列的元素</h6><p>&emsp;写入到输入序列的算法本质上是安全的–只会写入与指定输入范围数量相同的元素。ex:fill</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">fill</span>(v.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">begin</span>() + vec.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, <span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="不检查写入操作的算法"><a href="#不检查写入操作的算法" class="headerlink" title="不检查写入操作的算法"></a>不检查写入操作的算法</h6><p>&emsp;fill_n: 迭代器+计数器+值； 对指定数目的元素做写入运算，或者写入目标迭代器的算法，都不检查目标的大小是否足以存储要写入的元素。</p>
+<h6 id="引入back-inserter"><a href="#引入back-inserter" class="headerlink" title="引入back_inserter"></a>引入back_inserter</h6><p>&emsp;插入迭代器是可以给基础容器添加元素的迭代器。通常，用迭代器给容器元素赋值时，被赋值的是迭代器所指向的元素，插入迭代器会容器中添加一个元素，其值等于赋值运算的右操作数的值。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;</span><br><span class="line">fill_n(back_interator(vec),<span class="hljs-number">10</span>,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="写入到目标迭代器的算法"><a href="#写入到目标迭代器的算法" class="headerlink" title="写入到目标迭代器的算法"></a>写入到目标迭代器的算法</h6><p>&emsp;第三类算法向目标迭代器写入未知个数的元素，正如fill_n函数一样，目标迭代器指向存放输出数据的序列中第一个元素。ex: copy</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; ivec;</span><br><span class="line">copy(ilist.begin(),ilist.end(),back_iterter(ivec));</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3对容器元素重新排序的算法"><a href="#3对容器元素重新排序的算法" class="headerlink" title="3对容器元素重新排序的算法"></a>3对容器元素重新排序的算法</h4><hr>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/17/crossword%20Answers/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 555 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/16/Puzzle/">puzzle,UVa227，world Finals 1993</a>
-            
-        </h1>
-        <div class="content">
-            <p>&emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/16/Puzzle/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 238 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/15/Uva455/">Periodic Strings,UVa455</a>
-            
-        </h1>
-        <div class="content">
-            <p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p>
-<p>&emsp;Write a program to read a character and determine its smallest period.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/15/Uva455/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T11:29:08.232Z">2019-11-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 101 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/14/DigitCounting/">Digit Counting, UVa1225</a>
-            
-        </h1>
-        <div class="content">
-            <p>Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&lt;N&lt;10000). After that,he counts the number of times each digit appears in the sequence.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/14/DigitCounting/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T12:29:03.354Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 208 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/MolarMass/">MolarMass</a>
-            
-        </h1>
-        <div class="content">
-            <p>An organic compound /ˈkɒmpaʊnd/  is any member of a large class of chemical compounds whose molecules contain carbon. The molar mass of an organic compound is the mass of one mole of the organic compound. The molar mass of an organic compound can be computed from the standard atomic weights of the elements.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/MolarMass/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 144 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/Uva1585/">Score,ACM/ICPC Seoul 2005,Uva1585</a>
-            
-        </h1>
-        <div class="content">
-            <p>There is an objective test result such as “OOXXOXXOOO”. An ‘O’ means a correct answer of a problem and an ‘X’ means a wrong answer. The score of each problem of this test is calculated by itself and its just previous consecutive ‘O’’’s only when the answer is correct. For example, the score of the 10th problem is 3 that is obtained by itself and its two previous consecutive ‘O’s.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/Uva1585/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
