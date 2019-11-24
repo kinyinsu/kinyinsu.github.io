@@ -4,11 +4,88 @@
   
     
     <entry>
+      <title>无重复字符的最长字串</title>
+      <link href="/2019/11/24/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"/>
+      <url>/2019/11/24/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<p>给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。<a id="more"></a></p><p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p><p><strong>Solution:</strong></p><p>&emsp;最直接的解决方式就是遍历所有字符串，并判断这个字符串是否有重复字符，复杂度应该为O(n^3)</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;maxn;i++)</span><br><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i+<span class="hljs-number">1</span>;j&lt;maxn;j++)</span><br><span class="line">   判断字符串[i,j]是否有重复字符</span><br></pre></td></tr></table></figure><p>&emsp;可以发现，如果说[i,j]有重复字符，那么没必要再判断[i,j+1]，也就是说，已经找到了以s[i]开头的字符串的最长子串长度。下一步应该查找s[i+1]开头的字串。break；</p><p>&emsp;以滑动窗口来进一步简化：</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">比如字符串abbcddee</span><br><span class="line">初始窗口i=j=<span class="hljs-number">0</span>;<span class="hljs-comment">//加入a无重复，继续++j</span></span><br><span class="line">i=<span class="hljs-number">0</span>,j=<span class="hljs-number">1</span> <span class="hljs-comment">//如果加入b无重复，++j  ans=j-s=2</span></span><br><span class="line">i=<span class="hljs-number">0</span>,j=<span class="hljs-number">2</span> <span class="hljs-comment">//如果加入b发现有重复，窗口右移,移除hash表中的s[i],i++</span></span><br><span class="line">i=<span class="hljs-number">1</span>,j=<span class="hljs-number">2</span><span class="hljs-comment">//以此类推</span></span><br></pre></td></tr></table></figure><p>&emsp;对于字符串，最糟糕的情况下，每个字符将i和j访问两次。（添加j的时候访问一次，移除i的时候访问 一次）时间复杂度O(n)。</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>,n=s.<span class="hljs-built_in">size</span>();</span><br><span class="line">        <span class="hljs-keyword">int</span> ans=<span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> hash[<span class="hljs-number">260</span>]=&#123;<span class="hljs-number">0</span>&#125;;</span><br><span class="line">        <span class="hljs-keyword">while</span>(i&lt; n&amp;&amp;j&lt; n)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="hljs-keyword">if</span>(hash[s[j]]==<span class="hljs-number">0</span>)&#123;</span><br><span class="line">               hash[s[j]]++;</span><br><span class="line">               j++;</span><br><span class="line">               ans = ans&gt;j-i? ans:j-i;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">               hash[s[i++]]=<span class="hljs-number">0</span>;</span><br><span class="line">           &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><strong>进一步优化</strong></p><p>比如acdbefbmn，当i为0，j为6时，可以直接令i=4，也就是跳过前面一段而不是一直++，那么hash表存储字符的位置即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcodeMiddle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+            <tag> 滑动窗口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hangman Judge, UVa 489</title>
+      <link href="/2019/11/24/HangMan/"/>
+      <url>/2019/11/24/HangMan/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">________________</span><br><span class="line">| /         | </span><br><span class="line">|/          ⚪</span><br><span class="line">|          / | \</span><br><span class="line">|            |</span><br><span class="line">|           / \</span><br><span class="line">|</span><br></pre></td></tr></table></figure><p>&emsp;输入单词和玩家猜测，猜测最多错六次，否则lose；全部猜对win；放弃checked out;猜过的单词也算错误。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>11.3再谈迭代器</title>
+      <link href="/2019/11/20/%E5%86%8D%E8%B0%88%E8%BF%AD%E4%BB%A3%E5%99%A8/"/>
+      <url>/2019/11/20/%E5%86%8D%E8%B0%88%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p>&emsp;标准库所定义的迭代器不依赖于特定的容器。c++提供了另外三种迭代器。<iterator></iterator></p><ol><li>插入迭代器：与容器绑定，实现在容器中插入元素的功能。</li><li>iostream迭代器：与输入或输出流绑定在一起，用于迭代遍历所关联的IO流。</li><li>反向迭代器：这类迭代器实现向后遍历，而不是向前遍历。所有容器类型都定义了自己的reverse_iterator类型，由rbegin和rend成员函数返回。</li></ol><h4 id="1-插入迭代器-迭代器适配器，容器参数-gt-生成迭代器-："><a href="#1-插入迭代器-迭代器适配器，容器参数-gt-生成迭代器-：" class="headerlink" title="1.插入迭代器(迭代器适配器，容器参数-&gt;生成迭代器)："></a>1.插入迭代器(迭代器适配器，容器参数-&gt;生成迭代器)：</h4><p>&emsp;back_inserter:创建使用push_back实现插入的迭代器。</p><p>&emsp;front_inserter,使用push_front实现插入//容器必须提供push_front操作</p><p>&emsp;inserter:使用inserter实现插入操作，除了关联容器外， +指向插入起始位置的迭代器。<strong>inserter函数总是在它的迭代器实参所标明的位置前面插入新元素。</strong></p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">list</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator it = <span class="hljs-built_in">find</span>(<span class="hljs-built_in">list</span>.<span class="hljs-built_in">begin</span>(),<span class="hljs-built_in">list</span>.<span class="hljs-built_in">end</span>(),<span class="hljs-number">42</span>);</span><br><span class="line">replace_copy（ivec.<span class="hljs-built_in">begin</span>(),ivec.<span class="hljs-built_in">end</span>(),inserter(ilist,it),<span class="hljs-number">100</span>,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure><h4 id="2-iostream迭代器"><a href="#2-iostream迭代器" class="headerlink" title="2.iostream迭代器"></a>2.iostream迭代器</h4><p>虽然iostream类型不是容器，但是提供了在iostream对象上使用迭代器。istream_iterator用于读取输入输出流，而ostream_iterator则用于写输出流。这些迭代器将它们所对应的流视为特定类型的元素序列。使用流迭代器,将流视为特定类型的元素的序列。</p><table><thead><tr><th>-</th><th>-</th></tr></thead><tbody><tr><td>istream_iterator<t> in(strm);</t></td><td>创建从输入流strm中读取T类型对象的istream_iterator对象</td></tr><tr><td>iostream_iterator<t> in;</t></td><td>isstream_iterator 对象的超出末端迭代器</td></tr><tr><td>ostream_iterator<t> in(strm, delim);</t></td><td></td></tr><tr><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++Primer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>11.2初窥算法</title>
       <link href="/2019/11/20/c++%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/"/>
       <url>/2019/11/20/c++%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<p><strong>算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。</strong></p><p>·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。</p><p>·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。</p><h4 id="1-只读算法"><a href="#1-只读算法" class="headerlink" title="1.只读算法"></a>1.只读算法</h4><p>&emsp;只读取输入范围内的元素。ex: accumulate</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> sum = accumulate(vec.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">end</span>(),<span class="hljs-number">42</span>);</span><br></pre></td></tr></table></figure><p>指定第三个实参是必要的。</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.累加需要一个起始值。</span><br><span class="line">2.容器内的元素类型必须与第三个实参的类型匹配或者可以转换。</span><br></pre></td></tr></table></figure><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> sum = accumulate(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>(),<span class="hljs-built_in">string</span>(<span class="hljs-string">""</span>));</span><br><span class="line"><span class="hljs-comment">//实现了累加但是第三个参数不是字符串常量""，因为string的加法操作数一个是string一个是const char*</span></span><br></pre></td></tr></table></figure><p>ex2: first_find_of//标记两段元素范围，在第一段范围内查找与第二段范围任意元素匹配的元素，返回迭代器。</p><h4 id="2-写容器元素的算法"><a href="#2-写容器元素的算法" class="headerlink" title="2.写容器元素的算法"></a>2.写容器元素的算法</h4><p>&emsp;一些算法写入元素值，在使用这些算法写元素时当心，必须确保算法所写的序列至少足以存储要写入的元素。</p><h6 id="写入输入序列的元素"><a href="#写入输入序列的元素" class="headerlink" title="写入输入序列的元素"></a>写入输入序列的元素</h6><p>&emsp;写入到输入序列的算法本质上是安全的–只会写入与指定输入范围数量相同的元素。ex:fill</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">fill</span>(v.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">begin</span>() + vec.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, <span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure><h6 id="不检查写入操作的算法"><a href="#不检查写入操作的算法" class="headerlink" title="不检查写入操作的算法"></a>不检查写入操作的算法</h6><p>&emsp;fill_n: 迭代器+计数器+值； 对指定数目的元素做写入运算，或者写入目标迭代器的算法，都不检查目标的大小是否足以存储要写入的元素。</p><h6 id="引入back-inserter"><a href="#引入back-inserter" class="headerlink" title="引入back_inserter"></a>引入back_inserter</h6><p>&emsp;插入迭代器是可以给基础容器添加元素的迭代器。通常，用迭代器给容器元素赋值时，被赋值的是迭代器所指向的元素，插入迭代器会容器中添加一个元素，其值等于赋值运算的右操作数的值。</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;</span><br><span class="line">fill_n(back_interator(vec),<span class="hljs-number">10</span>,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure><h6 id="写入到目标迭代器的算法"><a href="#写入到目标迭代器的算法" class="headerlink" title="写入到目标迭代器的算法"></a>写入到目标迭代器的算法</h6><p>&emsp;第三类算法向目标迭代器写入未知个数的元素，正如fill_n函数一样，目标迭代器指向存放输出数据的序列中第一个元素。ex: copy</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; ivec;</span><br><span class="line">copy(ilist.begin(),ilist.end(),back_iterter(ivec));</span><br></pre></td></tr></table></figure><h4 id="3对容器元素重新排序的算法"><a href="#3对容器元素重新排序的算法" class="headerlink" title="3对容器元素重新排序的算法"></a>3对容器元素重新排序的算法</h4><hr>]]></content>
+        <content type="html"><![CDATA[<p><strong>算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。</strong></p><p>·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。</p><p>·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。</p><a id="more"></a><h4 id="1-只读算法"><a href="#1-只读算法" class="headerlink" title="1.只读算法"></a>1.只读算法</h4><p>&emsp;只读取输入范围内的元素。ex: accumulate</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> sum = accumulate(vec.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">end</span>(),<span class="hljs-number">42</span>);</span><br></pre></td></tr></table></figure><p>指定第三个实参是必要的。</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.累加需要一个起始值。</span><br><span class="line">2.容器内的元素类型必须与第三个实参的类型匹配或者可以转换。</span><br></pre></td></tr></table></figure><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> sum = accumulate(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>(),<span class="hljs-built_in">string</span>(<span class="hljs-string">""</span>));</span><br><span class="line"><span class="hljs-comment">//实现了累加但是第三个参数不是字符串常量""，因为string的加法操作数一个是string一个是const char*</span></span><br></pre></td></tr></table></figure><p>ex2: first_find_of//标记两段元素范围，在第一段范围内查找与第二段范围任意元素匹配的元素，返回迭代器。</p><h4 id="2-写容器元素的算法"><a href="#2-写容器元素的算法" class="headerlink" title="2.写容器元素的算法"></a>2.写容器元素的算法</h4><p>&emsp;一些算法写入元素值，在使用这些算法写元素时当心，必须确保算法所写的序列至少足以存储要写入的元素。</p><h6 id="写入输入序列的元素"><a href="#写入输入序列的元素" class="headerlink" title="写入输入序列的元素"></a>写入输入序列的元素</h6><p>&emsp;写入到输入序列的算法本质上是安全的–只会写入与指定输入范围数量相同的元素。ex:fill</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">fill</span>(v.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">begin</span>() + vec.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, <span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure><h6 id="不检查写入操作的算法"><a href="#不检查写入操作的算法" class="headerlink" title="不检查写入操作的算法"></a>不检查写入操作的算法</h6><p>&emsp;fill_n: 迭代器+计数器+值； 对指定数目的元素做写入运算，或者写入目标迭代器的算法，都不检查目标的大小是否足以存储要写入的元素。</p><h6 id="引入back-inserter"><a href="#引入back-inserter" class="headerlink" title="引入back_inserter"></a>引入back_inserter</h6><p>&emsp;插入迭代器是可以给基础容器添加元素的迭代器。通常，用迭代器给容器元素赋值时，被赋值的是迭代器所指向的元素，插入迭代器会容器中添加一个元素，其值等于赋值运算的右操作数的值。</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;</span><br><span class="line">fill_n(back_interator(vec),<span class="hljs-number">10</span>,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure><h6 id="写入到目标迭代器的算法"><a href="#写入到目标迭代器的算法" class="headerlink" title="写入到目标迭代器的算法"></a>写入到目标迭代器的算法</h6><p>&emsp;第三类算法向目标迭代器写入未知个数的元素，正如fill_n函数一样，目标迭代器指向存放输出数据的序列中第一个元素。ex: copy</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; ivec;</span><br><span class="line">copy(ilist.begin(),ilist.end(),back_iterter(ivec));</span><br></pre></td></tr></table></figure><h4 id="3对容器元素重新排序的算法"><a href="#3对容器元素重新排序的算法" class="headerlink" title="3对容器元素重新排序的算法"></a>3对容器元素重新排序的算法</h4><hr>]]></content>
       
       
       <categories>
