@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>The dole queue</title>
+      <link href="/2019/11/27/The%20Dole%20Queue/"/>
+      <url>/2019/11/27/The%20Dole%20Queue/</url>
+      
+        <content type="html"><![CDATA[<p>In a serious attempt to downsize the dole queue, The New National Green Labour Rhinoceros Party has decided on the following strategy. <a id="more"></a></p><p>Every day all dole applicants will be placed in a large circle, facing inwards. Someone is arbitrarily chosen as number 1, and the rest numbered counter-clockwise up to N. Staring from 1 and moving counter-clockwise, one labour official counts off k applicants, while another official starts from N and moves clockwise, counting m applicants, The two who are chosen are then sent off for retraining. </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>最长回文字串</title>
       <link href="/2019/11/24/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%97%E4%B8%B2/"/>
       <url>/2019/11/24/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%97%E4%B8%B2/</url>
@@ -48,7 +73,7 @@
       <link href="/2019/11/24/HangMan/"/>
       <url>/2019/11/24/HangMan/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">________________</span><br><span class="line">| /         | </span><br><span class="line">|/          ⚪</span><br><span class="line">|          / | \</span><br><span class="line">|            |</span><br><span class="line">|           / \</span><br><span class="line">|</span><br></pre></td></tr></table></figure><p>&emsp;输入单词和玩家猜测，猜测最多错六次，否则lose；全部猜对win；放弃checked out;猜过的单词也算错误。</p>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">________________</span><br><span class="line">| /         | </span><br><span class="line">|/          ⚪</span><br><span class="line">|          / | \</span><br><span class="line">|            |</span><br><span class="line">|           / \</span><br><span class="line">|</span><br></pre></td></tr></table></figure><p>&emsp;输入单词和玩家猜测，猜测最多错六次，否则lose；全部猜对win；放弃checked out;猜过的单词也算错误。<a id="more"></a></p><p>1.The contestant tries to solve puzzl eby guessing one letter at a time.</p><p>2.Every time a guess is correct, all the characters in the word that match the guess will be “turned over.” For example, if your guess is ‘o’ and the word is ‘book’,then both ‘o’s in the solution will be counted as ‘solved’.</p><p>3.Every time a wrong guess is made, a stroke will be added to the drawing of a hangman, which needs 7 strokes to complete. Each unique wrong guess only counts against the contestant once.</p><p><strong>Sample Input</strong><br>1<br>cheese<br>chese<br>2<br>cheese<br>abcdefg<br>3<br>cheese<br>abcdefgij<br>-1<br><strong>Sample Output</strong><br>Round 1<br>You win.<br>Round 2<br>You chickened out.<br>Round 3<br>You lose.</p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> chance;</span><br><span class="line"><span class="hljs-built_in">string</span> game;</span><br><span class="line"><span class="hljs-built_in">string</span> guess;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    chance =<span class="hljs-number">6</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;guess.<span class="hljs-built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(chance&lt;<span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;</span><br><span class="line">        <span class="hljs-keyword">char</span> temp = guess[i];</span><br><span class="line">        <span class="hljs-keyword">if</span>(game.<span class="hljs-built_in">find</span>(temp,<span class="hljs-number">0</span>)!=<span class="hljs-built_in">string</span>::npos)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">while</span>(game.<span class="hljs-built_in">find</span>(temp,<span class="hljs-number">0</span>)!=<span class="hljs-built_in">string</span>::npos)</span><br><span class="line">            &#123;</span><br><span class="line">                game.erase(game.<span class="hljs-built_in">find</span>(temp,<span class="hljs-number">0</span>),<span class="hljs-number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">else</span> --chance;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(game.empty())<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"You win."</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(chance&lt;<span class="hljs-number">0</span>) <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"You lose."</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"You chickened out."</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> round;</span><br><span class="line">        <span class="hljs-built_in">cin</span>&gt;&gt;round;</span><br><span class="line">        <span class="hljs-keyword">if</span>(round==<span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Round "</span>&lt;&lt;round&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">        <span class="hljs-built_in">cin</span>&gt;&gt;game&gt;&gt;guess;</span><br><span class="line">        <span class="hljs-built_in">run</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -135,9 +160,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -162,9 +187,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -189,9 +214,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -216,9 +241,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -268,9 +293,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -295,9 +320,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
