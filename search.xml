@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>box,ACM/ICPC NEERC 2004,UVa1587</title>
+      <link href="/2019/12/02/Box/"/>
+      <url>/2019/12/02/Box/</url>
+      
+        <content type="html"><![CDATA[<p>给定6个矩形的长和宽，判断能否构成长方体</p><a id="more"></a><p><strong>Sample Input</strong><br>1345 2584<br>2584 683<br>2584 1345<br>683 1345<br>683 1345<br>2584 683<br>1234 4567<br>1234 4567<br>4567 4321<br>4322 4567<br>4321 1234<br>4321 1234<br><strong>Sample Output</strong><br>POSSIBLE<br>IMPOSSIBLE</p><p>对于一个长方体，应该a,b,c。对应的六个四面体应该为</p><p>(a,b)*2</p><p>(a,c)*2</p><p>(b,c)*2</p><ol><li>去重，只剩下3组a,b;b,c;c,a;</li><li>剩下三组可以首位相接形成一个环。否则不是。</li></ol><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct rectangle&#123;</span><br><span class="line">    int wide;</span><br><span class="line">    int hight;</span><br><span class="line">    bool operator ==(const rectangle&amp;b )const&#123;</span><br><span class="line">    return wide==b.wide&amp;&amp;hight==b.hight||wide==b.hight&amp;&amp;hight==b.wide;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">rectangle info[6];</span><br><span class="line">bool judge()</span><br><span class="line">&#123;</span><br><span class="line">    bool flag=true;</span><br><span class="line">    for(int i=1;i&lt;6;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(info[0]==info[i])</span><br><span class="line">        &#123;</span><br><span class="line">            flag = false;</span><br><span class="line">            swap(info[1],info[i]);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(flag) return false;</span><br><span class="line">    flag = true;</span><br><span class="line">    for(int i=3;i&lt;6;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(info[2]==info[i])&#123;</span><br><span class="line">            flag=false;</span><br><span class="line">            swap(info[3],info[i]);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(flag) return false;</span><br><span class="line">    if(!(info[4]==info[5]))return false;</span><br><span class="line"></span><br><span class="line">    if(info[0].wide&gt;info[0].hight)swap(info[0].wide,info[0].hight);</span><br><span class="line">    if(info[2].wide&gt;info[2].hight)swap(info[2].wide,info[2].hight);</span><br><span class="line">    if(info[0].wide!=info[2].wide &amp;&amp; info[0].hight!=info[2].hight) return false;</span><br><span class="line">    rectangle t;</span><br><span class="line">    if(info[0].wide==info[2].wide)&#123;</span><br><span class="line">        t.hight = info[0].hight;</span><br><span class="line">        t.wide = info[2].hight;</span><br><span class="line">        if(t==info[4]) return true;</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        t.hight = info[0].wide;</span><br><span class="line">        t.wide = info[2].wide;</span><br><span class="line">        if(t==info[4])return true;</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    while(cin&gt;&gt;info[0].wide&gt;&gt;info[0].hight</span><br><span class="line">          &gt;&gt;info[1].wide&gt;&gt;info[1].hight</span><br><span class="line">          &gt;&gt;info[2].wide&gt;&gt;info[2].hight</span><br><span class="line">          &gt;&gt;info[3].wide&gt;&gt;info[3].hight</span><br><span class="line">          &gt;&gt;info[4].wide&gt;&gt;info[4].hight</span><br><span class="line">          &gt;&gt;info[5].wide&gt;&gt;info[5].hight)</span><br><span class="line">    &#123;</span><br><span class="line">        if(judge())cout&lt;&lt;&quot;POSSIBLE\n&quot;;</span><br><span class="line">        else cout&lt;&lt;&quot;IMPOSSIBLE\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>all in all, uva10340</title>
       <link href="/2019/12/01/ALL%20IN%20ALL/"/>
       <url>/2019/12/01/ALL%20IN%20ALL/</url>
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -47,9 +74,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -241,9 +268,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -268,9 +295,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -295,9 +322,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -322,9 +349,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -374,9 +401,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -401,9 +428,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       

@@ -7,15 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>ssssssss</title>
+<title>box,ACM/ICPC NEERC 2004,UVa1587 - ssssssss</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ssssssss">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+    <meta name="description" content="给定6个矩形的长和宽，判断能否构成长方体">
+<meta name="keywords" content="数组,字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="box,ACM&#x2F;ICPC NEERC 2004,UVa1587">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;Box&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
+<meta property="og:description" content="给定6个矩形的长和宽，判断能否构成长方体">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-12-02T15:24:57.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -75,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ssssssss" height="28">
+                <img src="/images/logo.svg" alt="box,ACM/ICPC NEERC 2004,UVa1587" height="28">
             
             </a>
         </div>
@@ -114,14 +118,13 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-17T08:47:56.546Z">2019-11-17</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T10:59:50.550Z">2019-12-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
@@ -131,7 +134,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 435 words)
+                    2 minutes read (About 286 words)
                 </span>
                 
                 
@@ -140,500 +143,34 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/17/crossword%20Answers/">Crossword Answer</a>
+                box,ACM/ICPC NEERC 2004,UVa1587
             
         </h1>
         <div class="content">
-            <p>&emsp; A crossword puzzle consists of a rectangular grid of black and white squares and two lists of definitions.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">______________________</span><br><span class="line">|1 |2 |3 |■ |4 |5 |6 |</span><br><span class="line">|■ |7 |  |■ |8 |  |  |</span><br><span class="line">|9 |  |  |10|■ |11|  |</span><br><span class="line">|12|  |■ |13|14|  |  |</span><br><span class="line">|■ |15|16|■ |17|  |■ |</span><br><span class="line">|18|  |  |■ |19|  |20|</span><br><span class="line">——————————————————————</span><br></pre></td></tr></table></figure>
+            <p>给定6个矩形的长和宽，判断能否构成长方体</p>
+<a id="more"></a>
+
+<p><strong>Sample Input</strong><br>1345 2584<br>2584 683<br>2584 1345<br>683 1345<br>683 1345<br>2584 683<br>1234 4567<br>1234 4567<br>4567 4321<br>4322 4567<br>4321 1234<br>4321 1234<br><strong>Sample Output</strong><br>POSSIBLE<br>IMPOSSIBLE</p>
+<p>对于一个长方体，应该a,b,c。对应的六个四面体应该为</p>
+<p>(a,b)*2</p>
+<p>(a,c)*2</p>
+<p>(b,c)*2</p>
+<ol>
+<li>去重，只剩下3组a,b;b,c;c,a;</li>
+<li>剩下三组可以首位相接形成一个环。否则不是。</li>
+</ol>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct rectangle&#123;</span><br><span class="line">    int wide;</span><br><span class="line">    int hight;</span><br><span class="line">    bool operator ==(const rectangle&amp;b )const&#123;</span><br><span class="line">    return wide==b.wide&amp;&amp;hight==b.hight||wide==b.hight&amp;&amp;hight==b.wide;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">rectangle info[6];</span><br><span class="line">bool judge()</span><br><span class="line">&#123;</span><br><span class="line">    bool flag=true;</span><br><span class="line">    for(int i=1;i&lt;6;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(info[0]==info[i])</span><br><span class="line">        &#123;</span><br><span class="line">            flag = false;</span><br><span class="line">            swap(info[1],info[i]);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(flag) return false;</span><br><span class="line">    flag = true;</span><br><span class="line">    for(int i=3;i&lt;6;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(info[2]==info[i])&#123;</span><br><span class="line">            flag=false;</span><br><span class="line">            swap(info[3],info[i]);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(flag) return false;</span><br><span class="line">    if(!(info[4]==info[5]))return false;</span><br><span class="line"></span><br><span class="line">    if(info[0].wide&gt;info[0].hight)swap(info[0].wide,info[0].hight);</span><br><span class="line">    if(info[2].wide&gt;info[2].hight)swap(info[2].wide,info[2].hight);</span><br><span class="line">    if(info[0].wide!=info[2].wide &amp;&amp; info[0].hight!=info[2].hight) return false;</span><br><span class="line">    rectangle t;</span><br><span class="line">    if(info[0].wide==info[2].wide)&#123;</span><br><span class="line">        t.hight = info[0].hight;</span><br><span class="line">        t.wide = info[2].hight;</span><br><span class="line">        if(t==info[4]) return true;</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        t.hight = info[0].wide;</span><br><span class="line">        t.wide = info[2].wide;</span><br><span class="line">        if(t==info[4])return true;</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    while(cin&gt;&gt;info[0].wide&gt;&gt;info[0].hight</span><br><span class="line">          &gt;&gt;info[1].wide&gt;&gt;info[1].hight</span><br><span class="line">          &gt;&gt;info[2].wide&gt;&gt;info[2].hight</span><br><span class="line">          &gt;&gt;info[3].wide&gt;&gt;info[3].hight</span><br><span class="line">          &gt;&gt;info[4].wide&gt;&gt;info[4].hight</span><br><span class="line">          &gt;&gt;info[5].wide&gt;&gt;info[5].hight)</span><br><span class="line">    &#123;</span><br><span class="line">        if(judge())cout&lt;&lt;&quot;POSSIBLE\n&quot;;</span><br><span class="line">        else cout&lt;&lt;&quot;IMPOSSIBLE\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/17/crossword%20Answers/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>, <a class="has-link-grey -link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a>
                 </div>
             </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 555 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/16/Puzzle/">puzzle,UVa227，world Finals 1993</a>
-            
-        </h1>
-        <div class="content">
-            <p>&emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/16/Puzzle/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 238 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/15/Uva455/">Periodic Strings,UVa455</a>
-            
-        </h1>
-        <div class="content">
-            <p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p>
-<p>&emsp;Write a program to read a character and determine its smallest period.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/15/Uva455/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T11:29:08.232Z">2019-11-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 101 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/14/DigitCounting/">Digit Counting, UVa1225</a>
-            
-        </h1>
-        <div class="content">
-            <p>Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&lt;N&lt;10000). After that,he counts the number of times each digit appears in the sequence.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/14/DigitCounting/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T10:51:24.316Z">2019-11-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">现代汉语</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 635 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/14/%E6%96%87%E5%AD%97-%E6%B1%89%E5%AD%97%E6%A6%82%E8%AF%B4/">文字-汉字概说</a>
-            
-        </h1>
-        <div class="content">
-            <p>&emsp;文字是记录语言的书写符号系统，是最重要的辅助性交流工具。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/14/%E6%96%87%E5%AD%97-%E6%B1%89%E5%AD%97%E6%A6%82%E8%AF%B4/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T12:29:03.354Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 208 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/MolarMass/">MolarMass</a>
-            
-        </h1>
-        <div class="content">
-            <p>An organic compound /ˈkɒmpaʊnd/  is any member of a large class of chemical compounds whose molecules contain carbon. The molar mass of an organic compound is the mass of one mole of the organic compound. The molar mass of an organic compound can be computed from the standard atomic weights of the elements.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/MolarMass/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T11:39:21.625Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 144 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/Uva1585/">Score,ACM/ICPC Seoul 2005,Uva1585</a>
-            
-        </h1>
-        <div class="content">
-            <p>There is an objective test result such as “OOXXOXXOOO”. An ‘O’ means a correct answer of a problem and an ‘X’ means a wrong answer. The score of each problem of this test is calculated by itself and its just previous consecutive ‘O’’’s only when the answer is correct. For example, the score of the 10th problem is 3 that is obtained by itself and its two previous consecutive ‘O’s.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/Uva1585/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T07:24:49.139Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">现代汉语</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 769 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E6%A6%82%E8%BF%B0-%E7%8E%B0%E4%BB%A3%E6%B1%89%E6%B0%91%E6%97%8F%E5%85%B1%E5%90%8C%E8%AF%AD/">现代汉语概述-现代汉民族共同语</a>
-            
-        </h1>
-        <div class="content">
-            <p>&emsp;共同语是一个民族全体成员通用的语言。方言则是民族语言的地方分支。方言是共同语形成的基础，共同语形成后，两者可以同时存在。</p>
-<p>&emsp;民族共同语是在一种方言的基础上形成的，这与经济、政治、文化分不开。这个民族共同语基础的方言叫基础方言。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E6%A6%82%E8%BF%B0-%E7%8E%B0%E4%BB%A3%E6%B1%89%E6%B0%91%E6%97%8F%E5%85%B1%E5%90%8C%E8%AF%AD/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-13T06:39:40.887Z">2019-11-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">现代汉语</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 378 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/13/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E6%A6%82%E8%BF%B0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">现代汉语概述-什么是现代汉语</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="汉语是汉民族的语言，现代汉语是现代汉民族所使用的语言。"><a href="#汉语是汉民族的语言，现代汉语是现代汉民族所使用的语言。" class="headerlink" title="汉语是汉民族的语言，现代汉语是现代汉民族所使用的语言。"></a>汉语是汉民族的语言，现代汉语是现代汉民族所使用的语言。</h4>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/13/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E6%A6%82%E8%BF%B0-%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-12T02:34:09.814Z">2019-11-12</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 123 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/12/hello-world/">Hello World</a>
-            
-        </h1>
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
         </div>
         
         
@@ -645,28 +182,21 @@
 
 
 
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/01/ALL%20IN%20ALL/">
+                <span class="level-item">all in all, uva10340</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/page/3/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -1194,7 +724,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ssssssss" height="28">
+                    <img src="/images/logo.svg" alt="box,ACM/ICPC NEERC 2004,UVa1587" height="28">
                 
                 </a>
                 <p class="is-size-7">
