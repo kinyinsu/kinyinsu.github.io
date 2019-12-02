@@ -121,6 +121,101 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-01T06:49:37.135Z">2019-12-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 92 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/01/ALL%20IN%20ALL/">all in all, uva10340</a>
+            
+        </h1>
+        <div class="content">
+            <p><strong>Sample Input</strong><br>sequence subsequence<br>person compression<br>VERDI vivaVittorioEmanueleReDiItalia<br>caseDoesMatter CaseDoesMatter<br><strong>Sample Output</strong><br>Yes<br>No<br>Yes<br>No</p>
+<p>判断string1 是否string2的子串。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">string</span> a,b;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">judge</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s1,<span class="hljs-built_in">string</span> s2)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=s2.<span class="hljs-built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(s1[<span class="hljs-number">0</span>]==s2[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(s1.<span class="hljs-built_in">size</span>()==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s2.<span class="hljs-built_in">size</span>()==i+<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> judge(s1.substr(<span class="hljs-number">1</span>),s2.substr(i+<span class="hljs-number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(judge(a,b))<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Yes"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"No"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-01T06:02:31.663Z">2019-12-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 45 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/01/Repeating%20Decimals/">Repeating Deciamals, ACM/ICPC World Finals 1990,UVa202</a>
+            
+        </h1>
+        <div class="content">
+            <p>&emsp;输入整数a和b(0&lt;=a&lt;=3000, 1&lt;=b&lt;=3000),输出a/b的循环小数表示以及循环节长度。例如a = 5,b = 43,小数表示为0.(116279069767441790465),循环节长度为21。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-01T02:16:03.769Z">2019-12-01</time>
                 
                 <div class="level-item">
@@ -561,113 +656,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-16T13:30:07.520Z">2019-11-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 555 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/16/Puzzle/">puzzle,UVa227，world Finals 1993</a>
-            
-        </h1>
-        <div class="content">
-            <p>&emsp;The illustration below represents a puzzle in its original configuration  and in its configuration after the following sequence of 6 moves:</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/16/Puzzle/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-15T13:44:32.918Z">2019-11-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 238 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/15/Uva455/">Periodic Strings,UVa455</a>
-            
-        </h1>
-        <div class="content">
-            <p>A character string is said to have period k if it can be formed by concatenating one or more repetitious of another string of length k. For example, the string “abcabcabcabc “ has perid 3, since it is formed by 4repetitions of the “abc”. It also has periods 6 and  12 .</p>
-<p>&emsp;Write a program to read a character and determine its smallest period.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/15/Uva455/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -731,7 +719,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        19
                     </p>
                 </div>
             </div>
@@ -835,7 +823,7 @@
                 <span class="level-item">onlineJudge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD/">
@@ -868,6 +856,32 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-01T06:49:37.135Z">2019-12-01</time></div>
+                    <a href="/2019/12/01/ALL%20IN%20ALL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">all in all, uva10340</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-01T06:02:31.663Z">2019-12-01</time></div>
+                    <a href="/2019/12/01/Repeating%20Decimals/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Repeating Deciamals, ACM/ICPC World Finals 1990,UVa202</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -908,32 +922,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T08:31:31.139Z">2019-11-24</time></div>
-                    <a href="/2019/11/24/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">无重复字符的最长子串</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/leetcodeMiddle/">leetcodeMiddle</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T07:03:57.732Z">2019-11-24</time></div>
-                    <a href="/2019/11/24/HangMan/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hangman Judge, UVa 489</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -951,7 +939,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -997,14 +985,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -1048,6 +1036,32 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-01T06:49:37.135Z">2019-12-01</time></div>
+                    <a href="/2019/12/01/ALL%20IN%20ALL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">all in all, uva10340</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-01T06:02:31.663Z">2019-12-01</time></div>
+                    <a href="/2019/12/01/Repeating%20Decimals/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Repeating Deciamals, ACM/ICPC World Finals 1990,UVa202</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-01T02:16:03.769Z">2019-12-01</time></div>
                     <a href="/2019/12/01/DNA%20Consensus%20String/" class="title has-link-black-ter is-size-6 has-text-weight-normal">DNA Consensus String, ACM/ICPC Seoul 2006, Uva1368</a>
                     <p class="is-size-7 is-uppercase">
@@ -1083,32 +1097,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T08:31:31.139Z">2019-11-24</time></div>
-                    <a href="/2019/11/24/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">无重复字符的最长子串</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/leetcodeMiddle/">leetcodeMiddle</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-24T07:03:57.732Z">2019-11-24</time></div>
-                    <a href="/2019/11/24/HangMan/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hangman Judge, UVa 489</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1126,7 +1114,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1172,14 +1160,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         <span class="tag">字符串</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
