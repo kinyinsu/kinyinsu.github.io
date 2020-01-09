@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>11.2初窥算法 - ssssssss</title>
+<title>kickdown - ssssssss</title>
 
 
-    <meta name="description" content="算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。 ·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。 ·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。">
-<meta name="keywords" content="c++">
+    <meta name="description" content="​    给出两个长度分别为n1,n2，且每列高度只为1或2的长条，需要将它们放入一个高度为3的容器，问能够容纳它们的最短容器长度。 Sample Input211211211222121121212121221212121221122112221212Sample Output10815 !!!从左往右和从右往左 取最小 比如 21 2222  1234567891011121314151617">
+<meta name="keywords" content="数组,字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="11.2初窥算法">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;20&#x2F;c++%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95&#x2F;index.html">
+<meta property="og:title" content="kickdown">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;07&#x2F;Kickdown&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
-<meta property="og:description" content="算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。 ·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。 ·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。">
+<meta property="og:description" content="​    给出两个长度分别为n1,n2，且每列高度只为1或2的长条，需要将它们放入一个高度为3的容器，问能够容纳它们的最短容器长度。 Sample Input211211211222121121212121221212121221122112221212Sample Output10815 !!!从左往右和从右往左 取最小 比如 21 2222  1234567891011121314151617">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-20T14:34:33.373Z">
+<meta property="og:updated_time" content="2020-01-09T21:55:26.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="11.2初窥算法" height="28">
+                <img src="/images/logo.svg" alt="kickdown" height="28">
             
             </a>
         </div>
@@ -124,17 +124,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-20T09:40:34.530Z">2019-11-20</time>
+                <time class="level-item has-text-grey" datetime="2020-01-07T07:35:49.042Z">2020-01-07</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
+                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 684 words)
+                    a minute read (About 140 words)
                 </span>
                 
                 
@@ -143,38 +143,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                11.2初窥算法
+                kickdown
             
         </h1>
         <div class="content">
-            <p><strong>算法永不执行容器提供的操作，泛型算法本身不执行容器的操作，只是单独依赖迭代器和迭代器操作实现，而非基于容器操作。</strong></p>
-<p>·输入范围：出了少数例外，所有算法都在一段范围的元素上操作，这段范围称为 “input range”。此类算法前两个参数标记范围。</p>
-<p>·理解算法基本方法：理解是否读元素，是否写元素，或者对元素进行重新排序。</p>
-<a id="more"></a>
+            <p>​    给出两个长度分别为n1,n2，且每列高度只为1或2的长条，需要将它们放入一个高度为3的容器，问能够容纳它们的最短容器长度。</p>
+<p><strong>Sample Input</strong><br>2112112112<br>2212112<br>12121212<br>21212121<br>2211221122<br>21212<br><strong>Sample Output</strong><br>10<br>8<br>15</p>
+<p>!!!从左往右和从右往左 取最小</p>
+<p>比如</p>
+<p>21</p>
+<p>2222 </p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ansCal</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s1,<span class="hljs-built_in">string</span> s2)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(s1.<span class="hljs-built_in">size</span>()&lt;s2.<span class="hljs-built_in">size</span>()) swap(s1,s2);</span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> p1=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> p2=<span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-built_in">begin</span> =<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(p1&lt;s1.<span class="hljs-built_in">size</span>()&amp;&amp;p2&lt;s2.<span class="hljs-built_in">size</span>()&amp;&amp;<span class="hljs-built_in">begin</span>&lt;s1.<span class="hljs-built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(((s1[p1]-<span class="hljs-string">'0'</span>)+(s2[p2]-<span class="hljs-string">'0'</span>))&gt;<span class="hljs-number">3</span>)&#123;</span><br><span class="line">            p2=<span class="hljs-number">0</span>;</span><br><span class="line">            p1=++<span class="hljs-built_in">begin</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p2++;</span><br><span class="line">            p1++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(p1&lt;s1.<span class="hljs-built_in">size</span>()&amp;&amp;p2==s2.<span class="hljs-built_in">size</span>())</span><br><span class="line">        <span class="hljs-keyword">return</span> s1.<span class="hljs-built_in">size</span>();</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-keyword">return</span> s1.<span class="hljs-built_in">size</span>()+s2.<span class="hljs-built_in">size</span>()-p2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">string</span> s1,s2;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;s1&gt;&gt;s2)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> ans1=ansCal(s1,s2);</span><br><span class="line">        <span class="hljs-built_in">string</span> s3;</span><br><span class="line">        <span class="hljs-built_in">string</span> s4;</span><br><span class="line">        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=s1.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            s3+=s1[i];&#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=s2.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)</span><br><span class="line">            s4+=s2[i];</span><br><span class="line">        <span class="hljs-keyword">int</span> ans2 = ansCal(s3,s4);</span><br><span class="line">        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">min</span>(ans1,ans2)&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-只读算法"><a href="#1-只读算法" class="headerlink" title="1.只读算法"></a>1.只读算法</h4><p>&emsp;只读取输入范围内的元素。ex: accumulate</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> sum = accumulate(vec.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">end</span>(),<span class="hljs-number">42</span>);</span><br></pre></td></tr></table></figure>
-
-<p>指定第三个实参是必要的。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.累加需要一个起始值。</span><br><span class="line">2.容器内的元素类型必须与第三个实参的类型匹配或者可以转换。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">string</span> sum = accumulate(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>(),<span class="hljs-built_in">string</span>(<span class="hljs-string">""</span>));</span><br><span class="line"><span class="hljs-comment">//实现了累加但是第三个参数不是字符串常量""，因为string的加法操作数一个是string一个是const char*</span></span><br></pre></td></tr></table></figure>
-
-<p>ex2: first_find_of//标记两段元素范围，在第一段范围内查找与第二段范围任意元素匹配的元素，返回迭代器。</p>
-<h4 id="2-写容器元素的算法"><a href="#2-写容器元素的算法" class="headerlink" title="2.写容器元素的算法"></a>2.写容器元素的算法</h4><p>&emsp;一些算法写入元素值，在使用这些算法写元素时当心，必须确保算法所写的序列至少足以存储要写入的元素。</p>
-<h6 id="写入输入序列的元素"><a href="#写入输入序列的元素" class="headerlink" title="写入输入序列的元素"></a>写入输入序列的元素</h6><p>&emsp;写入到输入序列的算法本质上是安全的–只会写入与指定输入范围数量相同的元素。ex:fill</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">fill</span>(v.<span class="hljs-built_in">begin</span>(), vec.<span class="hljs-built_in">begin</span>() + vec.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>, <span class="hljs-number">10</span>);</span><br></pre></td></tr></table></figure>
-
-<h6 id="不检查写入操作的算法"><a href="#不检查写入操作的算法" class="headerlink" title="不检查写入操作的算法"></a>不检查写入操作的算法</h6><p>&emsp;fill_n: 迭代器+计数器+值； 对指定数目的元素做写入运算，或者写入目标迭代器的算法，都不检查目标的大小是否足以存储要写入的元素。</p>
-<h6 id="引入back-inserter"><a href="#引入back-inserter" class="headerlink" title="引入back_inserter"></a>引入back_inserter</h6><p>&emsp;插入迭代器是可以给基础容器添加元素的迭代器。通常，用迭代器给容器元素赋值时，被赋值的是迭代器所指向的元素，插入迭代器会容器中添加一个元素，其值等于赋值运算的右操作数的值。</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; vec;</span><br><span class="line">fill_n(back_interator(vec),<span class="hljs-number">10</span>,<span class="hljs-number">0</span>);</span><br></pre></td></tr></table></figure>
-
-<h6 id="写入到目标迭代器的算法"><a href="#写入到目标迭代器的算法" class="headerlink" title="写入到目标迭代器的算法"></a>写入到目标迭代器的算法</h6><p>&emsp;第三类算法向目标迭代器写入未知个数的元素，正如fill_n函数一样，目标迭代器指向存放输出数据的序列中第一个元素。ex: copy</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; ivec;</span><br><span class="line">copy(ilist.begin(),ilist.end(),back_iterter(ivec));</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3对容器元素重新排序的算法"><a href="#3对容器元素重新排序的算法" class="headerlink" title="3对容器元素重新排序的算法"></a>3对容器元素重新排序的算法</h4><hr>
 
         </div>
         
@@ -182,7 +162,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/c/" rel="tag">c++</a>
+                    <a class="has-link-grey -link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>, <a class="has-link-grey -link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a>
                 </div>
             </div>
         </div>
@@ -199,17 +179,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/20/%E5%86%8D%E8%B0%88%E8%BF%AD%E4%BB%A3%E5%99%A8/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">11.3再谈迭代器</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/17/crossword%20Answers/">
-                <span class="level-item">Crossword Answer</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/02/Box/">
+                <span class="level-item">box,ACM/ICPC NEERC 2004,UVa1587</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -767,7 +740,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="11.2初窥算法" height="28">
+                    <img src="/images/logo.svg" alt="kickdown" height="28">
                 
                 </a>
                 <p class="is-size-7">
