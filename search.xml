@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>MessageDecoding</title>
+      <link href="/2020/01/10/MessageDecoding/"/>
+      <url>/2020/01/10/MessageDecoding/</url>
+      
+        <content type="html"><![CDATA[<p>输入编码头和编码文本，对编码文本进行解码</p><p><strong>Sample input</strong><br>TNM AEIOU<br>0010101100011<br>1010001001110110011<br>11000</p><p><strong>Sample output*</strong><br>TAN ME</p><p><strong>跨行字符读入的处理和二进制存储方式</strong></p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line"></span><br><span class="line">int readchar() //处理跨行的问题</span><br><span class="line">&#123;</span><br><span class="line">    for(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        int ch = getchar();</span><br><span class="line">        if(ch != &apos;\n&apos; &amp;&amp; ch!=&apos;\r&apos;) return ch; //一直读到非换行字符</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int readint(int c)</span><br><span class="line">&#123;</span><br><span class="line">   int v = 0;</span><br><span class="line">   while(c--)</span><br><span class="line">        v=v*2+readchar()-&apos;0&apos;;</span><br><span class="line">    return v;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int code[8][1&lt;&lt;8];</span><br><span class="line"></span><br><span class="line">int readcodes()</span><br><span class="line">&#123;</span><br><span class="line">    memset(code,0,sizeof(code));//清空数组</span><br><span class="line">    code[1][0] = readchar();</span><br><span class="line">    for(int  len = 2;len&lt;=7;len++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i =0;i&lt;(1&lt;&lt;len-1);i++)</span><br><span class="line">        &#123;</span><br><span class="line">            int ch = getchar();</span><br><span class="line">            if(ch==EOF) return 0;</span><br><span class="line">            if(ch==&apos;\n&apos;||ch==&apos;\r&apos;)return 1;</span><br><span class="line">            code[len][i]=ch;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    while(readcodes())&#123; //读入编码头</span><br><span class="line">        for(;;)</span><br><span class="line">        &#123;</span><br><span class="line">            int len = readint(3); //读入编码长度</span><br><span class="line">            if(len==0) break;//len==0说明整个编码结束</span><br><span class="line">            for(;;)&#123;</span><br><span class="line">                int v = readint(len);</span><br><span class="line">                if(v==(1&lt;&lt;len)-1)break;</span><br><span class="line">                putchar(code[len][v]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        putchar(&apos;\n&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Xiangqi,ACM/ICPC</title>
+      <link href="/2020/01/10/Xiangqi/"/>
+      <url>/2020/01/10/Xiangqi/</url>
+      
+        <content type="html"><![CDATA[<p>考虑一个象棋残局，其中红方有n个棋子，黑方只有一个将，红方除了有一个帅之外还有3种可能的棋子:车，马，炮，并且需要考虑蹩马腿与将和帅不能照面的规则。</p><p>输入所有棋子的位置，保证局面合法并且红方已经将军，你的任务是判断红方是否已经把黑方将死。</p><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> onlineJudge </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+            <tag> 递归 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>kickdown</title>
       <link href="/2020/01/07/Kickdown/"/>
       <url>/2020/01/07/Kickdown/</url>
