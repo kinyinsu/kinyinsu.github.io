@@ -7,19 +7,16 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Digit Counting, UVa1225 - ssssssss</title>
+<title>SpreadsheetTracking - ssssssss</title>
 
 
-    <meta name="description" content="Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&amp;lt;N&amp;lt;10000). After that,he counts the number of times each digit appears in the sequence.">
-<meta name="keywords" content="数组,字符串">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Digit Counting, UVa1225">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;DigitCounting&#x2F;index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="SpreadsheetTracking">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;11&#x2F;SpreadsheetTracking&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
-<meta property="og:description" content="Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&amp;lt;N&amp;lt;10000). After that,he counts the number of times each digit appears in the sequence.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-14T14:43:41.750Z">
+<meta property="og:updated_time" content="2020-01-11T08:38:49.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +76,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Digit Counting, UVa1225" height="28">
+                <img src="/images/logo.svg" alt="SpreadsheetTracking" height="28">
             
             </a>
         </div>
@@ -124,17 +121,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-14T11:29:08.232Z">2019-11-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-01-11T08:38:49.303Z">2020-01-11</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 101 words)
+                    a few seconds read (About 0 words)
                 </span>
                 
                 
@@ -143,33 +136,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Digit Counting, UVa1225
+                SpreadsheetTracking
             
         </h1>
         <div class="content">
-            <p>Trung takes a piece of chalk and starts writing a sequence of consecutive integers starting with 1 to N( 1&lt;N&lt;10000). After that,he counts the number of times each digit appears in the sequence.</p>
-<a id="more"></a>
-
-<p><strong>Input</strong></p>
-<p>T and each number</p>
-<p><strong>Output</strong></p>
-<p>for each test case, write sequentially in one line the number of digit 0-9 separated by a space.</p>
-<p><strong>Sample Input</strong></p>
-<p>2<br>3<br>13</p>
-<p><strong>Sample Output</strong></p>
-<p>0 1 1 1 0 0 0 0 0 0<br>1 6 2 2 1 1 1 1 1 1</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="hljs-keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> n;</span><br><span class="line">        <span class="hljs-keyword">int</span> digit=<span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;n;</span><br><span class="line">        <span class="hljs-keyword">int</span> total[<span class="hljs-number">10</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> x=i;</span><br><span class="line">            <span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               digit = x%<span class="hljs-number">10</span>;</span><br><span class="line">               total[digit]++;</span><br><span class="line">               x/=<span class="hljs-number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(i!=<span class="hljs-number">9</span>)&#123;</span><br><span class="line">                <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;total[i]&lt;&lt;<span class="hljs-string">" "</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;total[i]&lt;&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>, <a class="has-link-grey -link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a>
-                </div>
-            </div>
+            
         </div>
         
         
@@ -185,16 +156,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/15/Uva455/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/01/11/%E7%9F%AD%E8%AF%AD%E7%9A%84%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Periodic Strings,UVa455</span>
+                <span class="level-item">短语的结构类型</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/14/%E6%96%87%E5%AD%97-%E6%B1%89%E5%AD%97%E6%A6%82%E8%AF%B4/">
-                <span class="level-item">文字-汉字概说</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/10/MessageDecoding/">
+                <span class="level-item">MessageDecoding</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -788,7 +759,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Digit Counting, UVa1225" height="28">
+                    <img src="/images/logo.svg" alt="SpreadsheetTracking" height="28">
                 
                 </a>
                 <p class="is-size-7">
