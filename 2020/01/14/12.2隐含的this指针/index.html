@@ -10,13 +10,16 @@
 <title>12.2隐含的this指针 - ssssssss</title>
 
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="成员函数具有一个附加的隐含形参，即指向该类对象的 一个指针，这个隐含指针命名为this，与调用成员函数的对象绑定在一起。成员函数不能定义this形参，而是由编译器隐含地定义。成员函数的函数体可以显示使用this指针，但不是必须这么做。如果对类成员的引用没有限定，编译器会将这种引用处理成通过this指针的引用。">
+<meta name="keywords" content="c++">
+<meta property="og:type" content="article">
 <meta property="og:title" content="12.2隐含的this指针">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;14&#x2F;12.2%E9%9A%90%E5%90%AB%E7%9A%84this%E6%8C%87%E9%92%88&#x2F;index.html">
 <meta property="og:site_name" content="ssssssss">
+<meta property="og:description" content="成员函数具有一个附加的隐含形参，即指向该类对象的 一个指针，这个隐含指针命名为this，与调用成员函数的对象绑定在一起。成员函数不能定义this形参，而是由编译器隐含地定义。成员函数的函数体可以显示使用this指针，但不是必须这么做。如果对类成员的引用没有限定，编译器会将这种引用处理成通过this指针的引用。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2020-01-14T05:06:03.424Z">
+<meta property="og:updated_time" content="2020-01-15T12:16:55.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 
@@ -123,11 +126,15 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-01-14T05:06:03.424Z">2020-01-14</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 0 words)
+                    7 minutes read (About 1001 words)
                 </span>
                 
                 
@@ -140,7 +147,49 @@
             
         </h1>
         <div class="content">
-            
+            <p>成员函数具有一个附加的隐含形参，即指向该类对象的 一个指针，这个隐含指针命名为this，与调用成员函数的对象绑定在一起。成员函数不能定义this形参，而是由编译器隐含地定义。成员函数的函数体可以显示使用this指针，但不是必须这么做。如果对类成员的引用没有限定，编译器会将这种引用处理成通过this指针的引用。</p>
+<a id="more"></a>
+
+<h3 id="1-何时使用this指针"><a href="#1-何时使用this指针" class="headerlink" title="1.何时使用this指针"></a>1.何时使用this指针</h3><p>当我们需要将一个对象作为整体引用而不是引用对象的一个成员时，最常见的情况是在这样的函数中使用this：该函数返回对调用该函数的对象的引用。</p>
+<p>某种类可能具有某些操作，这些操作应该返回引用，Screen类就是这样的一个类，迄今为止，我们的类只有一对get操作，逻辑上，我们可以添加下面的操作。</p>
+<p>一对set操作，将特定字符或光标指向的字符设置为给定值</p>
+<p>一个move操作，给定两个index值，将光标移到新的位置。</p>
+<p>理想的情况下， 希望用户能够将这些操作的序列连接成一个单独的表达式。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myScreen.<span class="hljs-built_in">move</span>(<span class="hljs-number">4</span>,<span class="hljs-number">0</span>).<span class="hljs-built_in">set</span>(<span class="hljs-string">'#'</span>);</span><br><span class="line">等价于:</span><br><span class="line">myScreen.<span class="hljs-built_in">move</span>(<span class="hljs-number">4</span>,<span class="hljs-number">0</span>);</span><br><span class="line">myScreen.<span class="hljs-built_in">set</span>(<span class="hljs-string">'#'</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-返回-this"><a href="#2-返回-this" class="headerlink" title="2.返回*this"></a>2.返回*this</h3><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Screen</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-function">Screen&amp; <span class="hljs-title">move</span><span class="hljs-params">(index r,index c)</span></span>;</span><br><span class="line">	<span class="hljs-function">Screen&amp; <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">char</span>)</span></span>;</span><br><span class="line">	<span class="hljs-function">Screen&amp; <span class="hljs-title">set</span><span class="hljs-params">(index,index,<span class="hljs-keyword">char</span>)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line">Screen&amp; Screen::<span class="hljs-built_in">set</span>(<span class="hljs-keyword">char</span> c)</span><br><span class="line">&#123;</span><br><span class="line">    contents[<span class="hljs-built_in">cursor</span>] = c;</span><br><span class="line">    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">Screen&amp; Screen::<span class="hljs-built_in">move</span>(index r,index c )</span><br><span class="line">&#123;</span><br><span class="line">    index row = r*<span class="hljs-built_in">width</span>;</span><br><span class="line">    <span class="hljs-built_in">cursor</span> = row+c;</span><br><span class="line">    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>this 是一个指向非常量Screen的指针，如同任意的指针一样，可以通过对this指针解引用来访问this指向的对象。</p>
+<h3 id="3-从const成员函数返回-this"><a href="#3-从const成员函数返回-this" class="headerlink" title="3.从const成员函数返回*this"></a>3.从const成员函数返回*this</h3><p>不能从const成员函数返回指向类对象，的普通引用， const成员函数只能返回*this作为一个const引用。</p>
+<p>例如，我们可以给Screen类增加一个display操作，这个函数应该在给定的ostream上打印contents，逻辑上，这个操作应该是一个const成员，打印contents不会改变对象，如果将display作为Screen的const成员，则display内部的this指针将是一个const Screen*型的const。</p>
+<p>然而，与move和set操作一样，我们希望能够在一个操作序列中使用display。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myScreen.<span class="hljs-built_in">move</span>(<span class="hljs-number">4</span>,<span class="hljs-number">0</span>).<span class="hljs-built_in">set</span>(<span class="hljs-string">'#'</span>).<span class="hljs-built_in">display</span>(<span class="hljs-built_in">cout</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果display是一个const成员，则它的返回类型必须是const Screen&amp;;那么不能执行myScreen.display().set(‘*’)；</p>
+<p>问题在于这个表达式在由display返回的对象上运行set，该对象是const，不能在const上调用set，</p>
+<h3 id="4-基于const的重载"><a href="#4-基于const的重载" class="headerlink" title="4.基于const的重载"></a>4.基于const的重载</h3><p>定义两个display 一个是const一个不是const。基于成员函数是否为const,重载一个成员函数，同样的基于一个指针形参是否指向const可以重载一个函数。const对象只能使用const成员。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Screen</span>&#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line"><span class="hljs-function">Screen&amp; <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream &amp;os)</span></span></span><br><span class="line"><span class="hljs-function">	</span>&#123;do_display;<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">const</span> Screen&amp; <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream&amp;os)</span><span class="hljs-keyword">const</span></span></span><br><span class="line"><span class="hljs-function">	</span>&#123;do_display;<span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;&#125;</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">do_display</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::ostream &amp;os)</span><span class="hljs-keyword">const</span></span></span><br><span class="line"><span class="hljs-function">    </span>&#123;os&lt;&lt;contents;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-可变数据成员"><a href="#5-可变数据成员" class="headerlink" title="5.   可变数据成员"></a>5.   可变数据成员</h3><p>mutable data member永远都不能为const，甚至当它是const对象的成员的时候也是如此，所以const成员函数可以改变mutable成员</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Screen</span>&#123;</span></span><br><span class="line">       <span class="hljs-keyword">public</span>:</span><br><span class="line">       <span class="hljs-keyword">private</span>:</span><br><span class="line">       <span class="hljs-keyword">mutable</span> <span class="hljs-keyword">size_t</span> access_ctr;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="hljs-keyword">void</span> Screen::do_display(<span class="hljs-built_in">std</span>::ostream&amp; os) <span class="hljs-keyword">const</span></span><br><span class="line">   &#123;</span><br><span class="line">       ++access_ctr;</span><br><span class="line">       os&lt;&lt;contents;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-类作用域"><a href="#6-类作用域" class="headerlink" title="6.类作用域"></a>6.类作用域</h3><p>&nbsp;每个类定义了自己的新作用域和唯一的类型，在类的定义体内声明类成员，将成员名引入类的作用域，两个不同的类具有两个类作用域，即使两个类具有完全相同的成员列表。</p>
+<p>&nbsp;在类的作用域之外，成员只能通过对象或者指针分别使用成员访问操作符，或者-&gt;来访问。这些操作符左边的操作数分别是一个类对象或者指向类对象的指针，跟在操作符后面的成员名字必须在相关联的类的作用域中声明</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">obj</span>;</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> *<span class="hljs-title">ptr</span> = &amp;<span class="hljs-title">obj</span>;</span></span><br><span class="line">ptr-&gt;member;</span><br><span class="line">obj.memeber;</span><br><span class="line">ptr-&gt;memfcn();</span><br><span class="line">obj.memfcn();</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-作用域与成员定义"><a href="#7-作用域与成员定义" class="headerlink" title="7.作用域与成员定义"></a>7.作用域与成员定义</h3><p>尽管成员是在类的定义体之外定义的，但成员定义就好像它们是在类的作用域中一样。出现在类的定义体之外的成员定义必须指明成员出现在哪个类中；</p>
+<p><strong>形参表和函数体处于类作用域中</strong></p>
+<p><strong>函数返回类型不一定在类的作用域中</strong></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/c/" rel="tag">c++</a>
+                </div>
+            </div>
         </div>
         
         
@@ -299,7 +348,7 @@
                 <span class="level-item">c++Primer</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/leetcodeMiddle/">
@@ -344,7 +393,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/c/" style="font-size: 12.5px;">c++</a> <a href="/tags/%E5%87%BD%E6%95%B0/" style="font-size: 15px;">函数</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 20px;">字符串</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 17.5px;">数组</a> <a href="/tags/%E6%B1%89%E8%AF%AD%E8%A8%80/" style="font-size: 12.5px;">汉语言</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 10px;">滑动窗口</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">语法</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 10px;">递归</a>
+        <a href="/tags/c/" style="font-size: 14px;">c++</a> <a href="/tags/%E5%87%BD%E6%95%B0/" style="font-size: 16px;">函数</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 20px;">字符串</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 18px;">数组</a> <a href="/tags/%E6%B1%89%E8%AF%AD%E8%A8%80/" style="font-size: 12px;">汉语言</a> <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 10px;">滑动窗口</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">语法</a> <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 10px;">递归</a>
     </div>
 </div>
     
@@ -364,7 +413,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-14T05:06:03.424Z">2020-01-14</time></div>
                     <a href="/2020/01/14/12.2%E9%9A%90%E5%90%AB%E7%9A%84this%E6%8C%87%E9%92%88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">12.2隐含的this指针</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
                     </p>
                 </div>
             </div>
@@ -482,7 +531,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/c/">
                         <span class="tag">c++</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -564,7 +613,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-14T05:06:03.424Z">2020-01-14</time></div>
                     <a href="/2020/01/14/12.2%E9%9A%90%E5%90%AB%E7%9A%84this%E6%8C%87%E9%92%88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">12.2隐含的this指针</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
                     </p>
                 </div>
             </div>
@@ -682,7 +731,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/c/">
                         <span class="tag">c++</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
