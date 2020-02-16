@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title>1.6泛化能力</title>
+      <link href="/2020/02/02/1.6%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B/"/>
+      <url>/2020/02/02/1.6%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.4模型评估与模型选择</title>
+      <link href="/2020/01/27/1.4%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/"/>
+      <url>/2020/01/27/1.4%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/</url>
+      
+        <content type="html"><![CDATA[<p>·假设学习到的模型是Y=f(X),训练误差是模型Y=f(X)关于训练数据集的平均损失：</p><p>$$R(f)=1/N\sum_{i=1}^N L(y_i,f(X_i))$$</p><p>测试误差是模型 Y=f(X)关于测试数据集的平均损失：</p><p>$$e_{test}$$ = 1/N$$\sum_{i=1}^N L(y_i,f(x_i))$$</p><p>通常将学习方法对未知数据的预测能力称为泛化能力</p><p>·过拟合与模型选择</p><p>过拟合是指学习时候选择的模型所包含的参数过多，以致于出现这一模型对已知数据预测的很好，但对未知数据预测很差的现象。</p><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><p>模型选择的典型方法是正则化，正则化是结构风险最小化策略的实现，是在经验风险上加一个正则化项或者罚项。比如，正则化项可以是模型参数向量的L2范数。</p><p>$$L(w)=1/N \sum_{i=1}^N(f(x_i;w)-y_i)^2+\lambda/2||w||^2$$</p><p>这里，$$||w||$$表示参数向量w的$$L_2$$范数。</p><p>正则化符合奥卡姆剃刀原理，奥卡姆剃刀原理应用于模型选择时变为以下想法;在所有可能选择的模型中，能够很好地解释已知数据并且事分简单才是最好的模型，也就是应该选择的模型，从贝叶斯估计的角度来看，正则化项对对应于模型的先验概率，可以假设复杂的模型有较大的先验概率，简单的模型有较小的先验概率。</p><h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>1.简单交叉验证</p><p>随机将数据分为两部分，一部分作为训练集，一部分作为测试集；用训练集在各种条件下训练模型，从而得到不同的模型，在测试集上评估各个模型的测试误差，选出测试误差最小的模型；</p><p>2.S折交叉验证，方法如下：首先随机地将已给数据切分成S个互不相交的大小相同的子集，然后利用S-1个子集的数据训练模型，利用余下的子集测试模型；将这一过程对可能 的S中选择重复进行，最后选出S次评测中平均测试误差最小的模型。</p><p>3.留一交叉验证</p><p>S则交叉验证的特殊情形是S=N，称为留一交叉验证，N是给定数据集的容量。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 统计学习方法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.3统计学习三要素</title>
+      <link href="/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/"/>
+      <url>/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/</url>
+      
+        <content type="html"><![CDATA[<p><strong>·方法=模型+策略+算法</strong></p><p>·监督学习中，模型就是所要学习的条件概率分布或决策函数。</p><p>·假设空间定义为决策函数or条件概率愤怒的集合。函数族，概率分布族。</p><p>·策略：按照什么样的准则学习或选择最优的模型，统计学习的目标在于从假设空间中选取最优模型。</p><a id="more"></a><p>·损失和函数和风险函数</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">监督学习问题是在假设空间中选择模型作为决策函数，对于给定的输入X，由f(X)给出相应的输出Y，这个输出的预测值f(X)与真实值可能一致也可能不一致，用一个损失函数或代价函数来度量预测错误的程度，损失函数是f(X)和Y的非负实值函数，记作L(Y,f(X)).统计学习常用的损失函数有以下几种：</span><br><span class="line">(1) 0-1损失函数</span><br><span class="line">(2)平方损失函数</span><br><span class="line">(3)绝对损失函数</span><br><span class="line">(4)对数损失函数</span><br><span class="line">  L(Y,P(Y|X))=-logP(Y|X)</span><br><span class="line">损失函数值越小，模型就越好，由于模型的输入，输出是随机变量，遵循联合分布</span><br><span class="line">P(X|Y)，所以损失函数的期望是：</span><br></pre></td></tr></table></figure><p>$$R_{exp}(f)=E_p[L(Y,f(X))]=\int_{x\times y}P(x,y)dxdy$$</p><p>&nbsp;这是理论上模型f(X)关于联合分布P(X,Y)的平均意义下的损失，称为风险函数或期望函数。</p><p>—&gt;学习的目标就是选择期望风险最小的模型，由于联合分布P(X,Y)是未知的，$$R_{exp}$$不能直接计算，实际上，如果知道联合分布律，我们就可以计算出条件概率。一方面要用到联合分布率，另一方面联合分布率是未知的，所以监督学习成为一个病态问题  ill-formed problem。</p><p>给定一个训练数据集</p><p>T = {($$x_1,y_1$$),($$x_2,y_2$$),…,($$x_i,y_i$$),…,($$x_n,x_n$$)}</p><p>模型f(X)关于训练数据集的平均损失称为经验风险(empirical risk)或经验损失(empirical loss)，记作$$R_{exp}$$:</p><p>$$R_{exp}(f) = 1/N \sum_{i=1}^NL(y_i,f(x_i))$$</p><p>期望风险$$R_{exp}(f)$$是模型关于联合分布的期望损失，经验风险$$R_{emp}(f)$$是模型关于训练样本集的平均损失，根据大数定律，当样本容量N趋于无穷时，经验风险$$R_{emp}(f)$$趋于期望风险。</p><p>&nbsp;&nbsp;现实中训练样本数目有限，甚至很小，所以用经验风险估计期望风险常常并不理想，要对经验风险进行一定的矫正，关系到监督学习的两个基本策略：经验风险最小化和结构风险最小化。</p><p>·<strong>经验风险最小化和结构风险最小化</strong></p><p>&nbsp;&nbsp;在假设空间、损失函数以及训练数据集确定的情况下，经验风险函数式就可以确定。经验风险最小化的策略认为，经验风险最小的模型是最优的模型。根据这一策略，按照经验风险最小化最优模型就是求解最优化问题:</p><p>$$min:1/N \sum L(y_i,f(x_i))$$</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当样本容量足够大时，经验风险最小化能保证有很好的学习效果，在现实中被广泛采用，比如，极大似然估计就是经验风险最小化的一个例子，当模型是条件概率分布，损失函数是对数损失函数时，经验风险最小化就等价于极大似然估计。</span><br><span class="line">当样本容量很小时，经验风险最小化学习的效果就未必很好，会产生过拟合。</span><br><span class="line">结构风险最小化，structural risk minimization是为了防止过拟合而提出来的策略，结构风险最小化等价于正则化。结构风险在经验风险上加上表示模型复杂度的正则化项regularizer或者罚项penalty term，在假设空间、损失函数以及训练数据集确定的情况下，结构风险的定义是：</span><br></pre></td></tr></table></figure><p>$$R_{srm}(f)=1/N \sum_{i=1}^NL(y_i,f(X_i))+\lambda J(f)$$</p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J(f)为模型的复杂度，是定义在假设空间上的泛函，模型越复杂J(f)越大，反之，模型f越简单，复杂度越小，也就是说，复杂度表示了对复杂模型的惩罚，结构风险小需要经验风险与模型复杂度同时小。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 统计学习方法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>1.2监督学习</title>
       <link href="/2020/01/21/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
       <url>/2020/01/21/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</url>
@@ -191,9 +242,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -218,9 +269,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -245,9 +296,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -272,9 +323,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -299,9 +350,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -466,9 +517,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -493,9 +544,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -520,9 +571,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -547,9 +598,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -599,9 +650,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -626,9 +677,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> 数组 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       

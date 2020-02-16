@@ -121,6 +121,164 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-02T10:57:08.461Z">2020-02-02</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 0 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/02/02/1.6%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B/">1.6泛化能力</a>
+            
+        </h1>
+        <div class="content">
+            
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-27T12:57:11.226Z">2020-01-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 657 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/27/1.4%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/">1.4模型评估与模型选择</a>
+            
+        </h1>
+        <div class="content">
+            <p>·假设学习到的模型是Y=f(X),训练误差是模型Y=f(X)关于训练数据集的平均损失：</p>
+<p>$$R(f)=1/N\sum_{i=1}^N L(y_i,f(X_i))$$</p>
+<p>测试误差是模型 Y=f(X)关于测试数据集的平均损失：</p>
+<p>$$e_{test}$$ = 1/N$$\sum_{i=1}^N L(y_i,f(x_i))$$</p>
+<p>通常将学习方法对未知数据的预测能力称为泛化能力</p>
+<p>·过拟合与模型选择</p>
+<p>过拟合是指学习时候选择的模型所包含的参数过多，以致于出现这一模型对已知数据预测的很好，但对未知数据预测很差的现象。</p>
+<h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><p>模型选择的典型方法是正则化，正则化是结构风险最小化策略的实现，是在经验风险上加一个正则化项或者罚项。比如，正则化项可以是模型参数向量的L2范数。</p>
+<p>$$L(w)=1/N \sum_{i=1}^N(f(x_i;w)-y_i)^2+\lambda/2||w||^2$$</p>
+<p>这里，$$||w||$$表示参数向量w的$$L_2$$范数。</p>
+<p>正则化符合奥卡姆剃刀原理，奥卡姆剃刀原理应用于模型选择时变为以下想法;在所有可能选择的模型中，能够很好地解释已知数据并且事分简单才是最好的模型，也就是应该选择的模型，从贝叶斯估计的角度来看，正则化项对对应于模型的先验概率，可以假设复杂的模型有较大的先验概率，简单的模型有较小的先验概率。</p>
+<h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><p>1.简单交叉验证</p>
+<p>随机将数据分为两部分，一部分作为训练集，一部分作为测试集；用训练集在各种条件下训练模型，从而得到不同的模型，在测试集上评估各个模型的测试误差，选出测试误差最小的模型；</p>
+<p>2.S折交叉验证，方法如下：首先随机地将已给数据切分成S个互不相交的大小相同的子集，然后利用S-1个子集的数据训练模型，利用余下的子集测试模型；将这一过程对可能 的S中选择重复进行，最后选出S次评测中平均测试误差最小的模型。</p>
+<p>3.留一交叉验证</p>
+<p>S则交叉验证的特殊情形是S=N，称为留一交叉验证，N是给定数据集的容量。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-26T09:24:55.232Z">2020-01-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1210 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/">1.3统计学习三要素</a>
+            
+        </h1>
+        <div class="content">
+            <p><strong>·方法=模型+策略+算法</strong></p>
+<p>·监督学习中，模型就是所要学习的条件概率分布或决策函数。</p>
+<p>·假设空间定义为决策函数or条件概率愤怒的集合。函数族，概率分布族。</p>
+<p>·策略：按照什么样的准则学习或选择最优的模型，统计学习的目标在于从假设空间中选取最优模型。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-01-21T05:04:04.324Z">2020-01-21</time>
                 
                 <div class="level-item">
@@ -526,161 +684,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-07T07:35:49.042Z">2020-01-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 140 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/01/07/Kickdown/">kickdown</a>
-            
-        </h1>
-        <div class="content">
-            <p>​    给出两个长度分别为n1,n2，且每列高度只为1或2的长条，需要将它们放入一个高度为3的容器，问能够容纳它们的最短容器长度。</p>
-<p><strong>Sample Input</strong><br>2112112112<br>2212112<br>12121212<br>21212121<br>2211221122<br>21212<br><strong>Sample Output</strong><br>10<br>8<br>15</p>
-<p>!!!从左往右和从右往左 取最小</p>
-<p>比如</p>
-<p>21</p>
-<p>2222 </p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ansCal</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s1,<span class="hljs-built_in">string</span> s2)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(s1.<span class="hljs-built_in">size</span>()&lt;s2.<span class="hljs-built_in">size</span>()) swap(s1,s2);</span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> p1=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> p2=<span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> <span class="hljs-built_in">begin</span> =<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(p1&lt;s1.<span class="hljs-built_in">size</span>()&amp;&amp;p2&lt;s2.<span class="hljs-built_in">size</span>()&amp;&amp;<span class="hljs-built_in">begin</span>&lt;s1.<span class="hljs-built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(((s1[p1]-<span class="hljs-string">'0'</span>)+(s2[p2]-<span class="hljs-string">'0'</span>))&gt;<span class="hljs-number">3</span>)&#123;</span><br><span class="line">            p2=<span class="hljs-number">0</span>;</span><br><span class="line">            p1=++<span class="hljs-built_in">begin</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p2++;</span><br><span class="line">            p1++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(p1&lt;s1.<span class="hljs-built_in">size</span>()&amp;&amp;p2==s2.<span class="hljs-built_in">size</span>())</span><br><span class="line">        <span class="hljs-keyword">return</span> s1.<span class="hljs-built_in">size</span>();</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-keyword">return</span> s1.<span class="hljs-built_in">size</span>()+s2.<span class="hljs-built_in">size</span>()-p2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">string</span> s1,s2;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;s1&gt;&gt;s2)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> ans1=ansCal(s1,s2);</span><br><span class="line">        <span class="hljs-built_in">string</span> s3;</span><br><span class="line">        <span class="hljs-built_in">string</span> s4;</span><br><span class="line">        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=s1.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            s3+=s1[i];&#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=s2.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)</span><br><span class="line">            s4+=s2[i];</span><br><span class="line">        <span class="hljs-keyword">int</span> ans2 = ansCal(s3,s4);</span><br><span class="line">        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">min</span>(ans1,ans2)&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-02T10:59:50.550Z">2019-12-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 286 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/02/Box/">box,ACM/ICPC NEERC 2004,UVa1587</a>
-            
-        </h1>
-        <div class="content">
-            <p>给定6个矩形的长和宽，判断能否构成长方体</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/12/02/Box/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-01T06:49:37.135Z">2019-12-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 92 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/01/ALL%20IN%20ALL/">all in all, uva10340</a>
-            
-        </h1>
-        <div class="content">
-            <p><strong>Sample Input</strong><br>sequence subsequence<br>person compression<br>VERDI vivaVittorioEmanueleReDiItalia<br>caseDoesMatter CaseDoesMatter<br><strong>Sample Output</strong><br>Yes<br>No<br>Yes<br>No</p>
-<p>判断string1 是否string2的子串。</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">string</span> a,b;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">judge</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s1,<span class="hljs-built_in">string</span> s2)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=s2.<span class="hljs-built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(s1[<span class="hljs-number">0</span>]==s2[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(s1.<span class="hljs-built_in">size</span>()==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s2.<span class="hljs-built_in">size</span>()==i+<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> judge(s1.substr(<span class="hljs-number">1</span>),s2.substr(i+<span class="hljs-number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(judge(a,b))<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Yes"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"No"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -698,6 +701,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
             
         </ul>
     </nav>
@@ -746,7 +751,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        31
                     </p>
                 </div>
             </div>
@@ -874,7 +879,7 @@
                 <span class="level-item">统计学习方法</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li>
             </ul>
@@ -904,6 +909,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-02T10:57:08.461Z">2020-02-02</time></div>
+                    <a href="/2020/02/02/1.6%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.6泛化能力</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T12:57:11.226Z">2020-01-27</time></div>
+                    <a href="/2020/01/27/1.4%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.4模型评估与模型选择</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-26T09:24:55.232Z">2020-01-26</time></div>
+                    <a href="/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.3统计学习三要素</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-21T05:04:04.324Z">2020-01-21</time></div>
                     <a href="/2020/01/21/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.2监督学习</a>
                     <p class="is-size-7 is-uppercase">
@@ -926,45 +970,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-13T10:13:06.775Z">2020-01-13</time></div>
-                    <a href="/2020/01/13/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%E7%B1%BB/" class="title has-link-black-ter is-size-6 has-text-weight-normal">12.1类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T15:00:50.657Z">2020-01-11</time></div>
-                    <a href="/2020/01/11/%E7%9F%AD%E8%AF%AD%E7%9A%84%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">短语的结构类型</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E6%B1%89%E8%AF%AD%E8%A8%80/">汉语言</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T08:38:49.303Z">2020-01-11</time></div>
-                    <a href="/2020/01/11/SpreadsheetTracking/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spreadsheet Tracking</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -977,12 +982,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2020/01/">
                 <span class="level-start">
                     <span class="level-item">January 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -1104,6 +1120,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-02T10:57:08.461Z">2020-02-02</time></div>
+                    <a href="/2020/02/02/1.6%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.6泛化能力</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-27T12:57:11.226Z">2020-01-27</time></div>
+                    <a href="/2020/01/27/1.4%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.4模型评估与模型选择</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-26T09:24:55.232Z">2020-01-26</time></div>
+                    <a href="/2020/01/26/1.3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E4%B8%89%E8%A6%81%E7%B4%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.3统计学习三要素</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">统计学习方法</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-21T05:04:04.324Z">2020-01-21</time></div>
                     <a href="/2020/01/21/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1.2监督学习</a>
                     <p class="is-size-7 is-uppercase">
@@ -1126,45 +1181,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-13T10:13:06.775Z">2020-01-13</time></div>
-                    <a href="/2020/01/13/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%E7%B1%BB/" class="title has-link-black-ter is-size-6 has-text-weight-normal">12.1类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c-Primer/">c++Primer</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T15:00:50.657Z">2020-01-11</time></div>
-                    <a href="/2020/01/11/%E7%9F%AD%E8%AF%AD%E7%9A%84%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">短语的结构类型</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E6%B1%89%E8%AF%AD%E8%A8%80/">汉语言</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-11T08:38:49.303Z">2020-01-11</time></div>
-                    <a href="/2020/01/11/SpreadsheetTracking/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spreadsheet Tracking</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/onlineJudge/">onlineJudge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1177,12 +1193,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2020/01/">
                 <span class="level-start">
                     <span class="level-item">January 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
